@@ -21,27 +21,32 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @reviews = Review.new
-    @properties = Property.find(params[:property_id])
+    @review = Review.new
+    @manager = Manager.find(params[:manager_id])
   end
 
   def create
     @review = Review.new(review_params)
+    @manager = Manager.find(params[:manager_id])
+    @review.manager = @manager
 
+    # if @review.property_id.nil?
+    #   @review = Review.find(params[:review_id])
+    #   @review.property = @manager.property
+    # else
+    #   @manager = Manager.find(params[:manager_id])
+    #   @review.manager = @manager
+    # end
 
-    if @review.property_id.nil?
-      @review = Review.find(params[:review_id])
-      @review.property = @manager.property
-    else
-      @manager = Manager.find(params[:manager_id])
-      @review.manager = @manager
-    end
 
     if @review.save
-      redirect_to @review, notice: "Review was created successfully"
-    else
-      render :new
+      redirect_to manager_path(:manager_id)
     end
+    # if @review.save
+    #   redirect_to @review, notice: "Review was created successfully"
+    # else
+    #   render :new
+    # end
 
   end
 
@@ -50,7 +55,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :pros, :cons, :advice)
+    params.require(:review).permit(:rating, :pros, :cons, :advice, :location)
   end
 
   def set_review

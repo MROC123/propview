@@ -9,6 +9,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    @manager = Manager.new
   end
 
   def create
@@ -17,8 +18,11 @@ class PropertiesController < ApplicationController
     @property.save
   end
 
+
+
   def edit
   end
+
 
   def update
   end

@@ -9,6 +9,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    @manager = Manager.new
   end
 
   def edit
@@ -18,7 +19,20 @@ class PropertiesController < ApplicationController
   end
 
   def create
+    @property = Property.new(property_params)
+    @property.user = current_user
+    if params[:manager_id].present?
+      @property.manager = Manager.find(params[:manager_id])
+    elsif manager_params.present?
+      @property.manager = Manager.create(manager_params)
+    end
+    if @property.save
+      redirect_to @property, notice: "Property has been created successfully"
+    else
+      render :new
+    end
   end
+
 
   def update
   end

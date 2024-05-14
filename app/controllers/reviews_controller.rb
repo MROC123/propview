@@ -27,9 +27,14 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @manager = Manager.find(params[:manager_id])
-    if @review.property_id.nil?
-          @review.property = @manager.property
+    @review.user = current_user
+    @review.manager = @manager
+    @review.property = @property
+
+    if @review.save
+      redirect_to @review, notice: "Review was created successfully"
+    else
+      render :new
     end
   end
 

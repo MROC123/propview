@@ -1,0 +1,12 @@
+
+
+  <%= simple_form_for [@review] do |f| %>
+    <%= f.text :pros %>
+    <%= f.text :cons %>
+    <%= f.text :advice %>
+    <%= f.float :rating %>
+    <%= f.text :location %>
+    <%= f.text :rent %>
+    <%= f.text :service_charge %>
+    <%= f.submit "Submit Review for Company", class: "btn btn-success" %>
+<% end %>

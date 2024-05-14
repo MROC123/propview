@@ -11,17 +11,18 @@ class PropertiesController < ApplicationController
     @property = Property.new
   end
 
+  def create
+    @property = Property.new(property_params)
+    # @property.manager = current_user (need to find the Manager ID so property is attached to a manager)
+    @property.save
+  end
+
   def edit
   end
 
   def update
   end
 
-  def create
-  end
-
-  def update
-  end
 
   def destroy
     @property.destroy
@@ -38,4 +39,4 @@ class PropertiesController < ApplicationController
   end
 
 
-  end
+end

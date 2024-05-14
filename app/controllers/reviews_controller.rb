@@ -27,10 +27,15 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @manager = Manager.find(params[:manager_id])
     if @review.property_id.nil?
-          @review.property = @manager.property
+      @review = Review.find(params[:review_id])
+      @review.property = @manager.property
+    else
+      @manager = Manager.find(params[:manager_id])
+      @review.manager = @manager
     end
+
+    @review.save
   end
 
 

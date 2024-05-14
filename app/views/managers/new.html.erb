@@ -1,0 +1,10 @@
+<h1>Create Manager</h1>
+
+
+<div class="container">
+  <%= simple_form_for [@manager] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.submit "Submit New Company", class: "btn btn-success" %>
+<% end %>
+</div>

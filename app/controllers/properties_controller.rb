@@ -12,30 +12,21 @@ class PropertiesController < ApplicationController
     @manager = Manager.new
   end
 
+  def create
+    @property = Property.new(property_params)
+    # @property.manager = current_user (need to find the Manager ID so property is attached to a manager)
+    @property.save
+  end
+
+
+
   def edit
   end
 
-  def update
-  end
-
-  def create
-    @property = Property.new(property_params)
-    @property.user = current_user
-    if params[:manager_id].present?
-      @property.manager = Manager.find(params[:manager_id])
-    elsif manager_params.present?
-      @property.manager = Manager.create(manager_params)
-    end
-    if @property.save
-      redirect_to @property, notice: "Property has been created successfully"
-    else
-      render :new
-    end
-  end
-
 
   def update
   end
+
 
   def destroy
     @property.destroy
@@ -52,4 +43,4 @@ class PropertiesController < ApplicationController
   end
 
 
-  end
+end

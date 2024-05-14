@@ -5,4 +5,8 @@ class PagesController < ApplicationController
     @properties = Property.all || []
     @managers = Manager.all || []
   end
+
+  def index
+    @results = PgSearch.multisearch(:query)
+  end
 end

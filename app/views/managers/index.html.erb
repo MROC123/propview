@@ -2,4 +2,5 @@
 
 <% @managers.each do |manager| %>
 <p><%= manager.name %></p>
+<p><%= link_to "Select", manager_path(manager) %></p>
 <% end %>

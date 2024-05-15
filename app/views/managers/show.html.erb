@@ -9,7 +9,7 @@
 
 
 <% @reviews.each do |review| %>
-<%= review %>
+<%= review.pros %>
 <% end %>
 
 <%= link_to "Add a Review", new_manager_review_path(@manager) %>

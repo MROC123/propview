@@ -8,7 +8,6 @@ class ManagersController < ApplicationController
   def show
     @manager = Manager.find(params[:id])
     @reviews = @manager.reviews
-
     # && @Properties.reviews (delete this code)
   end
 

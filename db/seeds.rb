@@ -26,6 +26,7 @@ end
 managers = []
 5.times do
   managers << Manager.create!(
+    name: Faker::Name.name,
     address: Faker::Address.full_address,
     user: users.sample
   )

@@ -33,7 +33,7 @@ managers = []
 end
 
 property_types = ['Apartment', 'House', 'Condo', 'Studio']
-bedroom_types = ['Master', 'Double', 'Single']
+# bedroom_types = ['Master', 'Double', 'Single']
 
 properties = []
 10.times do
@@ -41,7 +41,7 @@ properties = []
     name: Faker::Address.community,
     address: Faker::Address.full_address,
     property_type: property_types.sample,
-    bedrooms: bedroom_types.sample,
+    bedrooms: rand(1..5).to_s,
     bathrooms: rand(1..3).to_s,
     manager: managers.sample
   )

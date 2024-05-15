@@ -39,9 +39,7 @@ class ReviewsController < ApplicationController
     # end
 
 
-    if @review.save
-      redirect_to manager_path(:manager_id)
-    end
+    @review.save
     # if @review.save
     #   redirect_to @review, notice: "Review was created successfully"
     # else
@@ -55,7 +53,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :pros, :cons, :advice, :location)
+    params.require(:review).permit(:rating, :pros, :cons, :advice, :location, :rent, :service_charge)
   end
 
   def set_review

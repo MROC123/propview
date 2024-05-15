@@ -6,6 +6,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    @manager = @property.manager
   end
 
   def new
@@ -33,9 +34,6 @@ class PropertiesController < ApplicationController
     @property.destroy
     redirect_to properties_url, notice: "Property was destroyed successfully"
   end
-
-
-
 
   private
 

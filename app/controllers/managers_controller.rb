@@ -1,11 +1,15 @@
 class ManagersController < ApplicationController
 
   def index
+    @managers = Manager.all
+
   end
 
   def show
     @manager = Manager.find(params[:id])
-    @reviews = Manager.reviews && Properties.reviews
+    @reviews = @manager.reviews
+
+    # && @Properties.reviews (delete this code)
   end
 
   def new
@@ -15,7 +19,9 @@ class ManagersController < ApplicationController
 
   def create
     @manager = Manager.new(manager_params)
+    @manager.user = current_user
     @manager.save
+    redirect_to manager_path(@manager)
   end
 
   private

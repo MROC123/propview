@@ -1,3 +1,32 @@
 <h1>New Review</h1>
 
 <%# if statement on params (whether it's a manager or a property) %>
+
+<%# <% if @review.defined?(:property_id) && @review.property_id.present? %> %>
+  <%# <%= render "shared/property_review" %> %>
+<%# <% else %> %>
+  <%# <%= render "shared/manager_review" %> %>
+<%# <% end %> %>
+
+<%#
+    if @review.property_id.nil?
+      @review = Review.find(params[:review_id])
+      @review.property = @manager.property
+    else
+      @manager = Manager.find(params[:manager_id])
+      @review.manager = @manager
+    end %>
+
+
+<div>
+  <%= simple_form_for [@manager, @review] do |f| %>
+    <%= f.input :pros %>
+    <%= f.input :cons %>
+    <%= f.input :advice %>
+    <%= f.input :rating %>
+    <%= f.input :location %>
+    <%= f.input :rent %>
+    <%= f.input :service_charge %>
+    <%= f.submit "Submit Review for Company", class: "btn btn-success" %>
+  <% end %>
+</div>

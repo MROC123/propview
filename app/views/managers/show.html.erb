@@ -1,1 +1,15 @@
 <h1>Manager Show page</h1>
+
+<h3>
+<%= @manager.name %>
+</h3>
+<h3>
+<%= @manager.address %>
+</h3>
+
+
+<% @reviews.each do |review| %>
+<%= review %>
+<% end %>
+
+<%= link_to "Add a Review", new_manager_review_path(@manager) %>

@@ -45,3 +45,11 @@
   </div>
 
 </div>
+
+
+<%= @property.name %>
+<% @property.reviews.each do |review| %>
+<p><%= review.pros %></p>
+<% end %>
+
+<%= link_to "Add a Review", new_manager_review_path(@manager, property_id: @property.id) %>

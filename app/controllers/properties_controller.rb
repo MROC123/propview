@@ -35,9 +35,6 @@ class PropertiesController < ApplicationController
     redirect_to properties_url, notice: "Property was destroyed successfully"
   end
 
-
-
-
   private
 
   def property_params

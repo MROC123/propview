@@ -1,21 +1,29 @@
 <h1>New Property</h1>
 
 <div class="container">
-<%= simple_form_for @property do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for @property do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :description %>
-    <%= f.input :property_type %>
-    <%= f.input :bedrooms %>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :description %>
+      <%= f.input :property_type %>
+      <%= f.input :bedrooms %>
+      <%= f.input :bathrooms %>
+      <%= f.input :manager_id, collection: [], prompt: "Select or create a manager", id: "property_manager_name", data: { autocomplete_source: managers_search_path } %>
 
-    <%= f.input :bathrooms %>
-    <%= f.input :manager_id, collection: Manager.all.map{|m| [m.address, m.id]} %>
-  </div>
+      <div id="new-manager-fields" style="display: none;">
+        <%= f.input :new_manager_name, label: "Manager Name" %>
+        <%= f.input :new_manager_address, label: "Manager Address" %>
+      </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+      <%= f.check_box :create_new_manager, id: "create_new_manager_checkbox" %>
+      <%= f.label :create_new_manager, "Create New Manager" %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

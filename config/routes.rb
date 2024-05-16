@@ -15,13 +15,12 @@ Rails.application.routes.draw do
 
   resources :managers, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:new, :create, :destroy, :edit, :update]
+    collection do
+      get :search
+    end
   end
 
   resources :users do
     resources :properties
   end
-
-
-
-
 end

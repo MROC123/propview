@@ -1,4 +1,28 @@
-.property-photos {
-  background-color: $light-beige;
-  border-radius: 15;
+.property-photos-card {
+  background-color: $light-gray;
+  border-radius: 10px;
 }
+
+.building-company-card {
+  background-color: $light-beige;
+  border-radius: 10px;
+}
+
+.reviews-card {
+  background-color: $light-beige;
+  border-radius: 10px;
+}
+
+.similar-properties-card {
+  box-shadow: 5px 2px 2px grey;
+  border-radius: 5px;
+}
+
+.map-card {
+  background-color: $light-beige;
+  border-radius: 10px;
+}
+// .building-company-card {
+//   padding-right: ($spacer * .5) !important;
+//   padding-left: 2;
+// }

@@ -9,14 +9,7 @@
     <%= f.input :address %>
     <%= f.input :description %>
     <%= f.input :property_type %>
-
-
-    <div class="nested-fields" data-association="bedrooms">
-      <%= f.simple_fields_for :bedrooms do |bf| %>
-        <%= render 'bedroom_fields', f: bf %>
-      <% end %>
-      <%= link_to_add_fields 'Add Bedroom', f, :bedrooms %>
-    </div>
+    <%= f.input :bedrooms %>
 
     <%= f.input :bathrooms %>
     <%= f.input :manager_id, collection: Manager.all.map{|m| [m.address, m.id]} %>

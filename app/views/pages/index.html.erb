@@ -1,4 +1,5 @@
 <h1>Search:</h1>
+<div class="search-page">
 
 <div class="row justify-content-center">
   <div class="col-sm-8 my-3" id="search-bar">
@@ -19,16 +20,28 @@
       <div class="search-cards-top">
         <div class="search-cards-title">
           <img src="https://img.freepik.com/premium-vector/company-icon-simple-element-illustration-company-concept-symbol-design-can-be-used-web-mobile_159242-7784.jpg" >
-          <h3><%= result.searchable.name %></h3>
+          <h3><%= result.searchable_type == "Property" ? result.searchable.address : result.searchable.name %></h3>
         </div>
-          <button class="select-button"><%= link_to "Select", result.searchable_type == "Manager" ? manager_path(result.searchable.id) : property_path(result.searchable.id) %></button>
+          <% if result.searchable.reviews.last.nil? %>
+          <button class="select-button"><%= link_to "Add Reviews", result.searchable_type == "Manager" ? manager_path(result.searchable.id) : property_path(result.searchable.id) %></button>
+          <% else %>
+          <button class="select-button"><%= link_to "More Reviews", result.searchable_type == "Manager" ? manager_path(result.searchable.id) : property_path(result.searchable.id) %></button>
+          <% end %>
       </div>
       <div class="search-cards-address">
-        <p><%= result.searchable.address %></p>
+          <p><%= result.searchable_type == "Property" ? "Property" : ""%></p>
+        <p><%= result.searchable_type == "Manager" ? result.searchable.address : "" %></p>
       </div>
       <div class="search-cards-review">
-        <p>''<%= result.searchable.reviews.last.nil? ? "Waiting for first Review!" : result.searchable.reviews.last.pros %>''</p>
+          <% if result.searchable.reviews.last.nil? %>
+            <p><%= "Waiting for first Review!" %></p>
+          <% else %>
+          <p><%= result.searchable.reviews.last.rating %> ★</p>
+          <p>''<%= result.searchable.reviews.last.pros %>''</p>
+          <% end %>
       </div>
     </div>
   <% end %>
+</div>
+
 </div>

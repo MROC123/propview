@@ -1,3 +1,9 @@
+.search-page {
+
+    position: relative;
+    min-height: 100vh;
+}
+
 .search-container {
   justify-content: center;
   margin-top: 50px;
@@ -41,18 +47,20 @@
 }
 
 .search-cards-title button {
-  margin-left: 10px;
+  margin-left: 8px;
   margin-top: 15px;
 }
 
 
 .search-cards-address {
-  margin-left: 40px;
+  margin-left: 10px;
   opacity: 0.8;
+  top: 0px;
 }
 
 .search-cards-review {
   padding: 5px;
+  margin-left: 10px;
 }
 
 #search-bar {

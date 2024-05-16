@@ -1,0 +1,56 @@
+.search-container {
+  justify-content: center;
+  margin-top: 50px;
+  margin-right: 18%;
+  margin-left: 18%;
+}
+
+.search-cards {
+  margin: 20px;
+  box-shadow: 5px 5px 8px rgb(150, 150, 150);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.search-cards-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.search-cards-top a {
+  text-decoration: none;
+  color: black;
+}
+
+.search-cards-top img {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  filter: brightness(90%);
+}
+
+.search-cards-title {
+  display: flex;
+  padding: 5px;
+}
+
+.search-cards-title h3 {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.search-cards-title button {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+
+.search-cards-address {
+  margin-left: 40px;
+  opacity: 0.8;
+}
+
+.search-cards-review {
+  padding: 5px;
+}

@@ -1,1 +1,55 @@
-<h1>Show Property</h1>
+<div class="container">
+
+  <div class="row y-5">
+
+    <div class="property-photos col-12 col-lg-4 p-3">
+
+
+        <img class="main-property-photo" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="house" width="100%">
+
+    </div>
+
+    <div class="property-info col-12 col-lg-4">
+
+        <h1><%= @property.name %></h1>
+        # rating should be here
+          <div class="list-inline-item d-flex justify-content-between my-5">
+            <div >
+              <p>PROPERTY TYPE</p>
+              <p class="text-center"><%= @property.property_type %></p>
+            </div>
+
+            <div>
+              <p>BEDS</p>
+              <p class="text-center"><%= @property.bedrooms %></p>
+            </div>
+
+            <div>
+              <p>BATHROOMS</p>
+              <p class="text-center"><%= @property.bathrooms %></p>
+
+              <%# <ul class="list-inline text-center align-items-center"> %>
+            </div>
+
+          </div>
+
+    </div>
+
+      <div class="building-company-card col-12 col-lg-4">
+        <h3>Building Company</h3>
+        # cloudinary image attached to this Company
+        <p> cloudinary image attached to this Company </p>
+        <p><%= @manager.address %></p>
+      </div>
+
+  </div>
+
+</div>
+
+
+<%= @property.name %>
+<% @property.reviews.each do |review| %>
+<p><%= review.pros %></p>
+<% end %>
+
+<%= link_to "Add a Review", new_manager_review_path(@manager, property_id: @property.id) %>

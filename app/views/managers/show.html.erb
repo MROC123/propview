@@ -8,8 +8,8 @@
 </h3>
 
 
-<% @reviews.each do |review| %>
-<%= review %>
+<% @manager.reviews.each do |review| %>
+<%= review.pros %>
 <% end %>
 
 <%= link_to "Add a Review", new_manager_review_path(@manager) %>

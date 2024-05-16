@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   end
 
   def index
-    @results = PgSearch.multisearch(:query)
+    @results = PgSearch.multisearch(params[:query])
   end
 end

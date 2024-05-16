@@ -1,1 +1,7 @@
 <h1>Index Properties</h1>
+
+<% @properties.each do |property| %>
+<p><%= property.name %></p>
+<p><%= property.address %></p>
+<p><%= link_to "Select", property_path(property) %></p>
+<% end %>

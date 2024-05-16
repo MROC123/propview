@@ -27,20 +27,17 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+
     @manager = Manager.find(params[:manager_id])
     @review.manager = @manager
-
-    # if @review.property_id.nil?
-    #   @review = Review.find(params[:review_id])
-    #   @review.property = @manager.property
-    # else
-    #   @manager = Manager.find(params[:manager_id])
-    #   @review.manager = @manager
-    # end
+    @review.user = current_user
 
 
-    if @review.save
-      redirect_to manager_path(:manager_id)
+    @review.save
+    if @review.property_id.nil?
+      redirect_to manager_path(@manager)
+    else
+      redirect_to property_path(@review.property_id)
     end
     # if @review.save
     #   redirect_to @review, notice: "Review was created successfully"
@@ -55,7 +52,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :pros, :cons, :advice, :location)
+    params.require(:review).permit(:rating, :pros, :cons, :advice, :location, :rent, :service_charge, :property_id)
   end
 
   def set_review

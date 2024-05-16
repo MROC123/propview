@@ -7,13 +7,15 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
 require 'faker'
 
+# Clear existing records
 Property.destroy_all
 Manager.destroy_all
 User.destroy_all
+Bedroom.destroy_all
 
+# Create users
 users = []
 5.times do
   users << User.create!(
@@ -23,6 +25,7 @@ users = []
   )
 end
 
+# Create managers
 managers = []
 5.times do
   managers << Manager.create!(
@@ -31,22 +34,62 @@ managers = []
   )
 end
 
+# Define property and bedroom types
 property_types = ['Apartment', 'House', 'Condo', 'Studio']
-bedroom_types = ['Master', 'Double', 'Single']
 
+# Helper method to generate a list of bedroom types based on the number of bedrooms
+def generate_bedroom_types(num_bedrooms)
+  all_bedroom_types = ['Master', 'Double', 'Single', 'Kids']
+  types = []
+  remaining_bedrooms = num_bedrooms
+
+  if remaining_bedrooms >= 1
+    types << 'Master'
+    remaining_bedrooms -= 1
+  end
+
+  if remaining_bedrooms >= 1
+    types << 'Double'
+    remaining_bedrooms -= 1
+  end
+
+  while remaining_bedrooms > 0
+    types << all_bedroom_types.sample
+    remaining_bedrooms -= 1
+  end
+
+  types.shuffle # Shuffle to randomize the order of types
+end
+
+# Create properties with random bedroom configurations
 properties = []
 10.times do
-  properties << Property.create!(
+  num_bedrooms = rand(1..5)
+  bedroom_types_list = generate_bedroom_types(num_bedrooms)
+
+  property = Property.create!(
     name: Faker::Address.community,
     address: Faker::Address.full_address,
     property_type: property_types.sample,
-    bedrooms: bedroom_types.sample,
+    bedrooms: num_bedrooms,
     bathrooms: rand(1..3).to_s,
     manager: managers.sample
   )
+
+  # Create bedroom records for the property
+  bedroom_types_list.each do |type|
+    Bedroom.create!(
+      property: property,
+      bedroom_type: type
+    )
+  end
+
+  properties << property
+  puts "Seeded Property '#{property.name}' with #{num_bedrooms} bedrooms."
 end
 
 puts "Seed data created successfully!"
+
 
 # 20.times do
 #   review = Review.new(

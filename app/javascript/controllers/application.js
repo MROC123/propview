@@ -1,17 +1,15 @@
-
 import { Application } from "@hotwired/stimulus"
+import { Autocomplete } from "stimulus-autocomplete"
 
 const application = Application.start()
+application.register('autocomplete', Autocomplete)
 
-application.debug = false
-window.Stimulus = application
+document.addEventListener('turbo:load', () => {
+  const managerInput = document.getElementById('property_manager_name');
+
+  if (managerInput) {
+    new Autocomplete(managerInput);
+  }
+});
 
 export { application }
-
-function updateBedroomDisplay(element) {
-  var bedroomType = $(element).closest('.nested-fields').find('select[name$="[bedroom_type]"]').val();
-  var quantity = $(element).closest('.nested-fields').find('select[name$="[quantity]"]').val();
-
-  var displayText = quantity + "x " + bedroomType;
-  $(element).closest('.nested-fields').find('.bedroom-display').text(displayText);
-}

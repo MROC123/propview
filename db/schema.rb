@@ -10,22 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_16_094026) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_16_153855) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bedrooms", force: :cascade do |t|
-    t.string "bedroom_type"
-    t.bigint "property_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "quantity"
-    t.index ["property_id"], name: "index_bedrooms_on_property_id"
-  end
-
   create_table "managers", force: :cascade do |t|
     t.text "address"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -52,6 +43,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_094026) do
     t.datetime "updated_at", null: false
     t.text "description"
     t.bigint "user_id", null: false
+    t.string "new_manager_name"
+    t.string "new_manager_address"
+    t.boolean "create_new_manager"
     t.index ["manager_id"], name: "index_properties_on_manager_id"
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
@@ -88,7 +82,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_094026) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bedrooms", "properties"
   add_foreign_key "managers", "users"
   add_foreign_key "properties", "managers"
   add_foreign_key "properties", "users"

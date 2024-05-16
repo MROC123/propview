@@ -43,21 +43,17 @@ property_types = ['Apartment', 'House', 'Condo', 'Studio']
 
 properties = []
 10.times do
-  num_bedrooms = rand(1..5)
-
   property = Property.create!(
     name: Faker::Address.community,
     address: Faker::Address.full_address,
     property_type: property_types.sample,
     bedrooms: rand(1..5).to_s,
     bathrooms: rand(1..3).to_s,
-    manager: managers.sample
+    manager: managers.sample,
+    user: users.sample
   )
-
-  end
-
   properties << property
-  puts "Seeded Property '#{property.name}' with #{num_bedrooms} bedrooms."
+  puts "Seeded Property '#{property.name}' with #{property.bedrooms} bedrooms."
 end
 
 puts "Seed data created successfully!"

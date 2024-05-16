@@ -3,7 +3,7 @@ class Property < ApplicationRecord
   belongs_to :user
 
   has_many :reviews
-  has_many :bedrooms, dependent: :destroy
+  # has_many :bedrooms, dependent: :destroy
 
   include PgSearch::Model
   multisearchable against: [:name, :address]

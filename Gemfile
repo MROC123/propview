@@ -78,3 +78,4 @@ end
 
 
 gem "faker"
+gem 'nested_form'

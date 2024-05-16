@@ -7,8 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
-require 'faker'
+require "faker"
 
 Property.destroy_all
 Manager.destroy_all
@@ -16,35 +15,43 @@ User.destroy_all
 
 users = []
 5.times do
-  users << User.create!(
+  user = User.create!(
     email: Faker::Internet.unique.email,
-    password: 'password',
-    password_confirmation: 'password'
+    password: "password",
+    password_confirmation: "password"
   )
+  users << user
 end
 
 managers = []
 5.times do
-  managers << Manager.create!(
+  manager_user = users.sample
+  manager = Manager.create!(
     name: Faker::Name.name,
     address: Faker::Address.full_address,
-    user: users.sample
+    user: manager_user,
+    user_id: manager_user.id
   )
+  managers << manager
 end
 
-property_types = ['Apartment', 'House', 'Condo', 'Studio']
-# bedroom_types = ['Master', 'Double', 'Single']
+property_types = ["Apartment", "House", "Condo", "Studio"]
 
 properties = []
 10.times do
-  properties << Property.create!(
+  user = users.sample
+  property = Property.create!(
     name: Faker::Address.community,
     address: Faker::Address.full_address,
     property_type: property_types.sample,
-    bedrooms: rand(1..5).to_s,
-    bathrooms: rand(1..3).to_s,
-    manager: managers.sample
+    bedrooms: rand(1..5),
+    bathrooms: rand(1..3),
+    manager: managers.sample,
+    user_id: user.id
   )
+
+  properties << property
+  puts "Seeded Property #{property.name}"
 end
 
 puts "Seed data created successfully!"

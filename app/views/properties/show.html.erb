@@ -58,8 +58,12 @@
   <div class="row my-2">
     <div class="reviews-card col-12 col-lg-9 p-3">
       <div class="review-on-top">
-      <h2>Reviews: ★ <%= ratingvalue = @property.reviews.map { |review| review.rating }
-        (ratingvalue.sum / ratingvalue.count).round(1)
+      <h2>Reviews: <%= ratingvalue = @property.reviews.map { |review| review.rating }
+          if ratingvalue.empty?
+            ""
+          else
+        "★ #{(ratingvalue.sum / ratingvalue.count).round(1)}"
+        end
       %></h2>
       <button type="select-button"><%= link_to "Add a Review", new_manager_review_path(@manager, property_id: @property.id) %></button>
       </div>

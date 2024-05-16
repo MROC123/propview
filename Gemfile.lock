@@ -161,6 +161,7 @@ GEM
     minitest (5.22.3)
     msgpack (1.7.2)
     mutex_m (0.2.0)
+    nested_form (0.3.2)
     net-imap (0.4.11)
       date
       net-protocol
@@ -312,6 +313,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder
+  nested_form
   pg (~> 1.1)
   pg_search
   puma (>= 5.0)

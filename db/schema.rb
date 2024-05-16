@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_14_141220) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_16_153855) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "managers", force: :cascade do |t|
     t.text "address"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -34,14 +34,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_14_141220) do
 
   create_table "properties", force: :cascade do |t|
     t.string "name"
-    t.text "address"
+    t.string "address"
     t.string "property_type"
     t.string "bedrooms"
     t.string "bathrooms"
     t.bigint "manager_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.string "new_manager_name"
+    t.string "new_manager_address"
+    t.boolean "create_new_manager"
     t.index ["manager_id"], name: "index_properties_on_manager_id"
+    t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -78,6 +84,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_14_141220) do
 
   add_foreign_key "managers", "users"
   add_foreign_key "properties", "managers"
+  add_foreign_key "properties", "users"
   add_foreign_key "reviews", "managers"
   add_foreign_key "reviews", "properties"
   add_foreign_key "reviews", "users"

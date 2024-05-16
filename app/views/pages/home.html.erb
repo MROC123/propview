@@ -1,16 +1,46 @@
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: pages_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-search" %>
-    <% end %>
+<div class="home-page">
+  <div class="home-page-search">
+    <%= image_tag "house_searching.jpg", class: "", alt: "" %>
+    <%= image_tag "two_reviews", class: "", alt: "" %>
   </div>
+
+
+  <div class="search-info-home">
+    <div class="container">
+      <div class="search-info-text">
+        <h2>Read Reviews.</h2>
+        <h2>Write Reviews.</h2>
+        <h2>Feel safe choosing your next home.</h2>
+      </div>
+      <div class="mt-5" id="search-bar">
+        <div class="">
+          <%= form_with url: pages_path, method: :get, class: "d-flex inside-bar" do %>
+            <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: " Search for Property, Company or Address"
+              %>
+            <%= submit_tag "Search", name: "", class: "btn btn-search" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-page-bottom-image">
+    <%= image_tag "upvote_review.png", class: "", alt: "" %>
+  </div>
+
+  <div class="home-text-end">
+    <div class="home-text-end-text">
+      <h3>PropView is for tennants, leaseholders, council tennants, and more.</h3>
+      <h3>Where you can view and share your experiences.</h3>
+      <h3>Search for your property, landlord, estate agency, building company, councils and housing associations.</h3>
+      <h3>Be able to search real users experiences about next property you are looking at.</h3>
+      <h3>Add your personal stories for others to view.</h3>
+      <h3>If you can't find your property you can add it, with your review and advice for others</h3>
+    </div>
+  </div>
+
 </div>

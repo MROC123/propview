@@ -11,7 +11,6 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
-    @property.bedrooms.build
     @manager = Manager.new
   end
 

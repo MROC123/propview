@@ -8,7 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require "faker"
-
+# Reviews.destroy_all
 Property.destroy_all
 Manager.destroy_all
 User.destroy_all

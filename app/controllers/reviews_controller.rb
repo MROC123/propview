@@ -33,23 +33,27 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
 
-    @review.save
-    if @review.property_id.nil?
-      redirect_to manager_path(@manager)
+
+    if @review.save
+      check_property_id
     else
-      redirect_to property_path(@review.property_id)
+      render :new
     end
-    # if @review.save
-    #   redirect_to @review, notice: "Review was created successfully"
-    # else
-    #   render :new
-    # end
+
 
   end
 
 
 
   private
+
+  def check_property_id
+    if @review.property_id.nil?
+      redirect_to manager_path(@manager), notice: "Review was created successfully"
+    else
+      redirect_to property_path(@review.property_id), notice: "Review was created successfully"
+    end
+  end
 
   def review_params
     params.require(:review).permit(:rating, :pros, :cons, :advice, :location, :rent, :service_charge, :property_id)

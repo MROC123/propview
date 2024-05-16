@@ -1,47 +1,60 @@
-<h1>Search:</h1>
+
 <div class="search-page">
 
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3" id="search-bar">
-    <%= form_with url: pages_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search for a Property, Company or Address..."
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-search" %>
+  <div class="top-buttons">
+  <button class="select-button"><%= link_to "Add Company/Owner", new_manager_path %></button>
+  <button class="select-button"><%= link_to "Add Property", new_property_path %></button>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3" id="search-bar">
+      <%= form_with url: pages_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search for a Property, Company or Address..."
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-search" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="results-answer">
+    <% if @results.empty? %>
+      <p><%= "Sorry there are no results, please add the property or owner" %></p>
+    <% else %>
+      <p><%= "Here are your results for search..." %></p>
     <% end %>
   </div>
-</div>
 
-<div class="search-container mt-3" >
-  <% @results.map do |result| %>
-    <div class="search-cards">
-      <div class="search-cards-top">
-        <div class="search-cards-title">
-          <img src="https://img.freepik.com/premium-vector/company-icon-simple-element-illustration-company-concept-symbol-design-can-be-used-web-mobile_159242-7784.jpg" >
-          <h3><%= result.searchable_type == "Property" ? result.searchable.address : result.searchable.name %></h3>
+  <div class="search-container mt-3" >
+    <% @results.map do |result| %>
+      <div class="search-cards">
+        <div class="search-cards-top">
+          <div class="search-cards-title">
+            <img src="https://img.freepik.com/premium-vector/company-icon-simple-element-illustration-company-concept-symbol-design-can-be-used-web-mobile_159242-7784.jpg" >
+            <h3><%= result.searchable_type == "Property" ? result.searchable.address : result.searchable.name %></h3>
+          </div>
+            <% if result.searchable.reviews.last.nil? %>
+            <button class="select-button"><%= link_to "Add Reviews", result.searchable_type == "Manager" ? manager_path(result.searchable.id) : property_path(result.searchable.id) %></button>
+            <% else %>
+            <button class="select-button"><%= link_to "More Reviews", result.searchable_type == "Manager" ? manager_path(result.searchable.id) : property_path(result.searchable.id) %></button>
+            <% end %>
         </div>
-          <% if result.searchable.reviews.last.nil? %>
-          <button class="select-button"><%= link_to "Add Reviews", result.searchable_type == "Manager" ? manager_path(result.searchable.id) : property_path(result.searchable.id) %></button>
-          <% else %>
-          <button class="select-button"><%= link_to "More Reviews", result.searchable_type == "Manager" ? manager_path(result.searchable.id) : property_path(result.searchable.id) %></button>
-          <% end %>
+        <div class="search-cards-address">
+            <p><%= result.searchable_type == "Property" ? "Property" : ""%></p>
+          <p><%= result.searchable_type == "Manager" ? result.searchable.address : "" %></p>
+        </div>
+        <div class="search-cards-review">
+            <% if result.searchable.reviews.last.nil? %>
+              <p><%= "Waiting for first Review!" %></p>
+            <% else %>
+            <p><%= result.searchable.reviews.last.rating %> ★</p>
+            <p>''<%= result.searchable.reviews.last.pros %>''</p>
+            <% end %>
+        </div>
       </div>
-      <div class="search-cards-address">
-          <p><%= result.searchable_type == "Property" ? "Property" : ""%></p>
-        <p><%= result.searchable_type == "Manager" ? result.searchable.address : "" %></p>
-      </div>
-      <div class="search-cards-review">
-          <% if result.searchable.reviews.last.nil? %>
-            <p><%= "Waiting for first Review!" %></p>
-          <% else %>
-          <p><%= result.searchable.reviews.last.rating %> ★</p>
-          <p>''<%= result.searchable.reviews.last.pros %>''</p>
-          <% end %>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
 </div>

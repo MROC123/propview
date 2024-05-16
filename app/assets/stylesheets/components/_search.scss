@@ -27,6 +27,7 @@
 .search-cards-top a {
   text-decoration: none;
   color: black;
+  margin: auto;
 }
 
 .search-cards-top img {
@@ -85,4 +86,14 @@ border-radius: 20px;
   // background-repeat: no-repeat;
   // background-position: left center;
   // object-fit: cover;
+}
+
+
+.results-answer {
+  margin: 25px;
+}
+
+.results-answer p {
+  margin-left: 180px;
+  font-size: 25px;
 }

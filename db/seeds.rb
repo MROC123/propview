@@ -7,13 +7,15 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
 require 'faker'
 
+# Clear existing records
 Property.destroy_all
 Manager.destroy_all
 User.destroy_all
+Bedroom.destroy_all
 
+# Create users
 users = []
 5.times do
   users << User.create!(
@@ -23,6 +25,7 @@ users = []
   )
 end
 
+# Create managers
 managers = []
 5.times do
   managers << Manager.create!(
@@ -32,12 +35,17 @@ managers = []
   )
 end
 
+# Define property and bedroom types
 property_types = ['Apartment', 'House', 'Condo', 'Studio']
-# bedroom_types = ['Master', 'Double', 'Single']
+
+
+# Helper method to generate a list of bedroom types based on the number of bedrooms
 
 properties = []
 10.times do
-  properties << Property.create!(
+  num_bedrooms = rand(1..5)
+
+  property = Property.create!(
     name: Faker::Address.community,
     address: Faker::Address.full_address,
     property_type: property_types.sample,
@@ -45,9 +53,15 @@ properties = []
     bathrooms: rand(1..3).to_s,
     manager: managers.sample
   )
+
+  end
+
+  properties << property
+  puts "Seeded Property '#{property.name}' with #{num_bedrooms} bedrooms."
 end
 
 puts "Seed data created successfully!"
+
 
 # 20.times do
 #   review = Review.new(

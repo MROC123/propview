@@ -1,0 +1,6 @@
+<div class="nested-fields">
+  <%= f.input :bedroom_type, collection: ['Master', 'Double', 'Single', 'Kids', 'Other'], include_blank: false, input_html: { onchange: "updateBedroomDisplay(this)" } %>
+  <%= f.input :quantity, collection: (1..5), include_blank: false, input_html: { onchange: "updateBedroomDisplay(this)" } %>
+  <%= link_to_remove_fields 'Remove Bedroom', f %>
+  <div class="bedroom-display"></div>
+</div>

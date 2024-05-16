@@ -11,20 +11,29 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    @property.bedrooms.build
     @manager = Manager.new
   end
 
   def create
     @property = Property.new(property_params)
+    @property.user_id = current_user.id
+    if @property.save
+      redirect_to @property, notice: "Property has been created successfully"
+    else
+      render :new
+    end
     # @property.manager = current_user (need to find the Manager ID so property is attached to a manager)
-    @property.save
   end
 
+
+  def my_properties
+    @user_properties = current_user.properties
+  end
 
 
   def edit
   end
-
 
   def update
   end
@@ -38,8 +47,6 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:review).permit(:name, :address, :type, :bedrooms, :bathrooms)
+    params.require(:property).permit(:name, :address, :property_type, bedrooms_attributes: [:id, :bedroom_type, :quantity], :bathrooms => [])
   end
-
-
 end

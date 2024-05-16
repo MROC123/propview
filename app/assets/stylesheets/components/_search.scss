@@ -54,3 +54,27 @@
 .search-cards-review {
   padding: 5px;
 }
+
+#search-bar {
+padding: 7px;
+border: solid;
+border-color: rgb(180, 180, 180);
+border-width: thin;
+background-color: white;
+border-radius: 20px;
+}
+
+.inside-bar {
+  border-radius: 20px;
+  padding: 6px;
+  height: 60px;
+}
+
+#query{
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  // background-image: url("m_glass.png") ;
+  // background-repeat: no-repeat;
+  // background-position: left center;
+  // object-fit: cover;
+}

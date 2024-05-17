@@ -1,3 +1,5 @@
+//property show
+
 .property-photos-card {
   background-color: $light-gray;
   border-radius: 10px;
@@ -14,15 +16,32 @@
 }
 
 .similar-properties-card {
-  box-shadow: 5px 2px 2px grey;
+  box-shadow: 2px 2px 2px grey;
   border-radius: 5px;
 }
+
+
+//manager show
+
+.manager-show-info {
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 5px;
+}
+
+.manager-show-other-properties-card {
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 5px;
+}
+
+.manager-show-reviews-card {
+  background-color: $light-beige;
+  border-radius: 10px;
+}
+
+
+//universal
 
 .map-card {
   background-color: $light-beige;
   border-radius: 10px;
 }
-// .building-company-card {
-//   padding-right: ($spacer * .5) !important;
-//   padding-left: 2;
-// }

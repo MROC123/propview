@@ -1,8 +1,35 @@
-.manager-avatar{
-  border-radius: 50%;
-  size: 15px;
+// .manager-avatar{
+//   border-radius: 50%;
+//   size: 15px;
+// }
+
+.manager-show-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
+.manager-logo {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: solid;
+  margin: 10px;
+}
+
+.manager-show-info-top-bookmark {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.manager-show-info-top{
+  margin-top: 20px;
+  padding: 10px;
+}
 .manager-show-name {
   font-size: x-large;
 }
@@ -13,4 +40,33 @@
 
 .manager-show-address {
   font-size: large;
+}
+
+// review and properties div
+
+.manager-review-and-properties{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.manager-properties-small-card {
+  border: solid 1px #eeeff0;
+  box-shadow: 0 0 2px #d1d3d4;
+  padding: 5px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.manager-properties-small-card-text a {
+  text-decoration: none;
+  color: black;
+  padding: 4px;
+  font-weight: bold;
+  margin-top: 3px;
+  text-align: center;
+}
+
+.manager-properties-small-card p {
+  text-align: center;
 }

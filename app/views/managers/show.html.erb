@@ -1,43 +1,101 @@
 <div class="container">
 
+    <div class="top-buttons">
+  <button class="select-button"><%= link_to "Add Company/Owner", new_manager_path %></button>
+  <button class="select-button"><%= link_to "Add Property", new_property_path %></button>
+  </div>
+
   <div class="row my-2">
 
-    <div class="manager-show-info col-12 col-lg-9 p-3">
+    <div class="manager-show-info">
 
       <div>
-        <img class="manager-avatar" scr="https://images.unsplash.com/photo-1616587896595-51352538155b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <img class="manager-logo" src="https://plus.unsplash.com/premium_photo-1708598173791-ccf42a677c47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmFrZSUyMGNvbXBhbnklMjBsb2dvfGVufDB8fDB8fHww" alt="">
       </div>
 
-      <div>
-        <h3 class="manager-show-name">
-        <%= @manager.name %>
-        </h3>
+      <div class ="manager-show-info-top">
+        <div class="manager-show-info-top-bookmark">
+            <div>
+              <h2 class="manager-show-name">
+              <%= @manager.name %>
+              </h2>
+            </div>
+            <div>
+              <p>(bookmark?)</p>
+            </div>
+        </div>
         <h3 class="manager-show-address">
         <%= @manager.address %>
         </h3>
+        <p>(website.address.link)</p>
         <p>⭐️⭐️⭐️⭐️⭐️</p>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
       </div>
 
     </div>
 
-    <div class="manager-show-other-properties-card col-12 col-lg-3 p-3">
-      <h3 class="managers-properties-title"> <%= @manager.name %>'s Properties
-      </h3>
-    </div>
 
-    <div class="manager-show-reviews-card p-3">
-      <% @manager.reviews.each do |review| %>
-      <%= review.pros %>
-      <% end %>
-
-      <%= link_to "Add a Review", new_manager_review_path(@manager) %>
-    </div>
 
   </div>
 
+        <div class="manager-review-and-properties">
+
+        <div class="reviews-card col-12 col-lg-9 p-3">
+          <div class="review-on-top">
+            <h2>Reviews: <%= ratingvalue = @manager.reviews.map { |review| review.rating }
+              if ratingvalue.empty?
+                ""
+              else
+            "★ #{(ratingvalue.sum / ratingvalue.count).round(1)}"
+            end
+            %></h2>
+            <button class="select-button"><%= link_to "Add a Review", new_manager_review_path(@manager) %></button>
+          </div>
 
 
+
+          <div class="review-section">
+            <% @manager.reviews.reverse.each do |review| %>
+              <div class="review-cards">
+                <div class="review-cards-top-line">
+                  <% if review.property.nil? %>
+                    <p><%= "(Insert Review Title)" %></p>
+                    <% else %>
+                    <%= link_to "#{review.property.address}", property_path(review.property) %>
+                    <% end %>
+                  <h3>★ <%= review.rating %></h3>
+                </div>
+                <p class="review-cards-date"><small><%= review.created_at.strftime('%d/%m/%Y') %></small></p>
+                <div class="review-cards-content">
+                  <h4 class="review-pro">Pros:</h4>
+                  <p>''<%= review.pros %>''</p>
+                  <h4 class="review-con">Cons:</h4>
+                  <p>''<%= review.cons %>''</p>
+                  <h4>Advice:</h4>
+                  <p>''<%= review.advice %>''</p>
+                </div>
+                <div class="review-cards-ras">
+                  <p><%= review.location.empty? ? "" : "Location: #{review.location}" %></p>
+                  <p><%= review.rent.nil? ? "" : "Rent: #{review.rent.to_i} p.m" %></p>
+                  <p><%= review.service_charge.nil? ? "" : "Service Charge: #{review.service_charge.to_i} p.a" %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="managers-properties">
+            <h3>Attached Properties:</h3>
+            <% @manager.properties.each do |property| %>
+            <div class="manager-properties-small-card">
+              <p class="manager-properties-small-card-text"><%= link_to "#{property.address}", property_path(property) %></p>
+              <p>No. of Reviews:</p>
+              <p><%= property.reviews.count %></p>
+            </div>
+            <% end %>
+        </div>
+
+       </div>
 
 
   <div class="row my-2">

@@ -1,4 +1,14 @@
-//property photos
+//property top
+
+.property-page-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+
+}
+
+
 
 .main-property-photo {
   border-radius: 15px;
@@ -13,10 +23,59 @@
     margin-bottom: 0px;
 }
 
-//property info
+.similar-properties-card-right{
+  right: 0;
+}
+
+// proeprty photo
+.property-photos-card{
+  width: 70%;
+}
+
+//property info top
+
+.property-info-top{
+  padding: 3px;
+  border: solid 1px #eeeff0;
+  box-shadow: 0 0 2px #d1d3d4;
+  border-radius: 20px;
+}
 
 .property-show-title {
   font-size: xx-large;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.property-info-top-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.property-show-title-property_type{
+  padding: 20px;
+}
+
+.property-show-title-beds {
+  padding: 20px;
+}
+
+.property-show-title-bathroom{
+  padding: 20px;
+}
+
+.property-show-title-reviews {
+  padding: 20px;
+}
+// review-similar
+
+.property-review-similar {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 7px;
 }
 
 .info-name {
@@ -50,15 +109,39 @@
 
 //building company card
 
-.building-comany-heading {
+.building-company-card {
+  border: solid 1px #eeeff0;
+  box-shadow: 0 0 2px #d1d3d4;
+  background-color: $light-gray;
+}
+
+.building-comany-heading{
+
+  padding: 3px;
+}
+
+.building-comany-heading h3 {
   font-size: larger;
   margin-top: 5px;
   margin-bottom: 15px;
+  margin-left: 5px;
+}
+
+.company-property-photo-small {
+  border-radius: 15px;
+}
+//
+
+
+.similar-properties {
+  margin-top: 15px;
+
 }
 
 .manager-address-card {
   margin-top: 15px;
 }
+
 
 //reviews
 

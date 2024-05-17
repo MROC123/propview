@@ -6,7 +6,7 @@
 }
 
 .building-company-card {
-  background-color: $light-beige;
+  background-color: $light-gray;
   border-radius: 10px;
 }
 
@@ -21,8 +21,8 @@
 //manager show
 
 .manager-show-info {
-  box-shadow: 2px 2px 2px grey;
-  border-radius: 5px;
+  background-color: $light-gray;
+  border-radius: 10px;
 }
 
 .manager-show-other-properties-card {

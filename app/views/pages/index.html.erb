@@ -50,6 +50,7 @@
               <p><%= "Waiting for first Review!" %></p>
             <% else %>
             <p><%= result.searchable.reviews.last.rating %> ★</p>
+            <h4 class="review-pro">Pros:</h4>
             <p>''<%= result.searchable.reviews.last.pros %>''</p>
             <% end %>
         </div>

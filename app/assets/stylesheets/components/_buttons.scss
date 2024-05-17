@@ -4,12 +4,29 @@
   background-color: #E5E1FF;
   box-shadow: 2px 2px 4px rgb(201, 201, 201);
   text-decoration: none;
-  height: 50px;
-  width: 100px;
+  height: 60px;
+  width: 150px;
+  color: black;
+  border: solid 1px #eeeff0;
 }
 
 .btn-search {
   background-color: #E5E1FF;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.top-buttons {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-content: center;
+  column-gap: 10px;
+}
+
+.select-button a {
+  color: black;
+  text-decoration: none;
+  justify-content: center;
+  margin: auto;
 }

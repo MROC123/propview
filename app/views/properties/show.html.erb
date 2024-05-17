@@ -65,7 +65,7 @@
         "★ #{(ratingvalue.sum / ratingvalue.count).round(1)}"
         end
       %></h2>
-      <button type="select-button"><%= link_to "Add a Review", new_manager_review_path(@manager, property_id: @property.id) %></button>
+      <button class="select-button"><%= link_to "Add a Review", new_manager_review_path(@manager, property_id: @property.id) %></button>
       </div>
 
       <div class="review-section">

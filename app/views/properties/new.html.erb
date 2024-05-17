@@ -11,15 +11,13 @@
       <%= f.input :property_type %>
       <%= f.input :bedrooms %>
       <%= f.input :bathrooms %>
-      <%= f.input :manager_id, collection: [], prompt: "Select or create a manager", id: "property_manager_name", data: { autocomplete_source: managers_search_path } %>
+      <%= f.input :manager_id, as: :hidden, input_html: { id: "property_manager_id" } %>
+      <%= text_field_tag :manager_name, nil, placeholder: "Search or create a manager", id: "property_manager_name", class: "form-control" %>
 
       <div id="new-manager-fields" style="display: none;">
         <%= f.input :new_manager_name, label: "Manager Name" %>
         <%= f.input :new_manager_address, label: "Manager Address" %>
       </div>
-
-      <%= f.check_box :create_new_manager, id: "create_new_manager_checkbox" %>
-      <%= f.label :create_new_manager, "Create New Manager" %>
     </div>
 
     <div class="form-actions">

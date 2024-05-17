@@ -16,11 +16,18 @@ class ManagersController < ApplicationController
 
   end
 
+  def search
+    @managers = Manager.where("name ILIKE ?", "%#{params[:term]}%")
+    render json: @managers.map { |manager| { id: manager.id, label: manager.name, value: manager.id } }
+
   def create
     @manager = Manager.new(manager_params)
     @manager.user = current_user
-    @manager.save
-    redirect_to manager_path(@manager)
+    if @manager.save
+      render json: @manager, status: :created
+    else
+      render json: @manager.errors, status: :unprocessable_entity
+    end
   end
 
   private

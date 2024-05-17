@@ -5,6 +5,6 @@ class Manager < ApplicationRecord
   # has_many :reviews, through: :properties
 
   include PgSearch::Model
-  multisearchable against: [:name, :address]
+  pg_search_scope :search_by_name, against: :name, using: { tsearch: { prefix: true } }
 
 end

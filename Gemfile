@@ -79,3 +79,4 @@ end
 
 gem "faker"
 gem 'nested_form'
+gem 'jquery-ui-rails'

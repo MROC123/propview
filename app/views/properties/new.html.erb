@@ -1,15 +1,18 @@
 <h1>New Property</h1>
 
-<div class="container">
-
-  <%= simple_form_for [@property] do |f| %>
+<div class="container" data-controller="autocomplete">
+  <%= simple_form_for @property do |f| %>
+    <%= f.input :manager, collection: @managers %>
     <%= f.input :name %>
-    <%= f.input :address %>
+    <div class="form-group">
+      <%= f.label :address, "Address", for: "property_address" %>
+      <%= f.text_field :address, id: "property_address", class: "form-control", "data-target" => "autocomplete.input" %>
+    </div>
     <%= f.input :property_type %>
     <%= f.input :bedrooms %>
     <%= f.input :bathrooms %>
-    <%# <%= f.select :manager, Manager.all.name %>
+    <div id="address_search_results" class="dropdown-menu" aria-labelledby="property_address" data-target="autocomplete.results"></div>
+    <%= link_to "Create New Manager", new_manager_path, class: "btn btn-primary create-manager-link" %>
     <%= f.submit "Submit New Property", class: "btn btn-success" %>
-<% end %>
-
+  <% end %>
 </div>

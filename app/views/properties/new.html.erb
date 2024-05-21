@@ -1,9 +1,13 @@
+<div class="create-new-container">
+
 <h1>New Property</h1>
 
 <div class="container">
+<div class="create-new-and-guidlines">
+<div class="create-new">
   <div class="row mb-3">
-    <div class="custom-button">
-      <%= link_to 'Add New Manager', new_manager_path, class: 'btn btn-primary' %>
+    <div class="custom-button mb-2">
+      <%= link_to 'Add a Company or Manager', new_manager_path, class: 'review-button' %>
     </div>
   </div>
 
@@ -43,12 +47,29 @@
 
     <div class="row mb-3">
       <div class="col-md-12">
-        <%= f.submit "Submit New Property", class: "btn btn-success" %>
+        <%= f.submit "Add a New Property", class: "review-button" %>
       </div>
     </div>
   <% end %>
 </div>
 
+  <div class="guidlines-card">
+    <h2>Keep it Real</h2>
+    <p>Thank you for contributing to the community.
+    Your opinion will help others make decisions about jobs and companies.
+    </p>
+    <h4>Please stick to the Community Guidelines and do not post:</h4>
+      <li>Aggressive or discriminatory language</li>
+      <li>Profanities</li>
+      <li>Trade secrets/confidential information</li>
+    <p>Thank you for doing your part to keep PropView the most trusted place to find a home you love.
+    See the Community Guidelines for more details.</p>
+  </div>
+
+    </div>
+</div>
+
+</div>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     var managerSelect = document.getElementById("manager-select");

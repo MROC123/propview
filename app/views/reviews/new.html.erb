@@ -1,10 +1,14 @@
+<div class="create-new-container">
 
-<h1>New Review</h1>
+<%# <h1>Write a new Review</h1> %>
 
 
 
 <div >
   <div class="container">
+
+  <div class="create-new-and-guidlines">
+  <div class="create-new">
     <%= simple_form_for [@manager, @review] do |f| %>
     <%= f.input :property_id, :as => :hidden, :input_html => { :value => params[:property_id] } %>
       <%= f.input :title %>
@@ -15,7 +19,25 @@
       <%= f.input :location %>
       <%= f.input :rent %>
       <%= f.input :service_charge %>
-      <%= f.submit "Submit Review for Company", class: "btn btn-success" %>
+      <%= f.submit "Submit your Review", class: "review-button mt-3" %>
     <% end %>
   </div>
+
+  <div class="guidlines-card">
+  <h2>Keep it Real</h2>
+  <p>Thank you for contributing to the community.
+  Your opinion will help others make decisions about jobs and companies.
+  </p>
+  <h4>Please stick to the Community Guidelines and do not post:</h4>
+    <li>Aggressive or discriminatory language</li>
+    <li>Profanities</li>
+    <li>Trade secrets/confidential information</li>
+  <p>Thank you for doing your part to keep PropView the most trusted place to find a home you love.
+  See the Community Guidelines for more details.</p>
+</div>
+
+</div>
+
+
+</div>
 </div>

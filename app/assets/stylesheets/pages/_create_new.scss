@@ -2,6 +2,12 @@
   background-color: #FCFBF3;
 }
 
+.create-new-container h1 {
+  text-align: center;
+  font-weight: 700;
+  padding-top: 30px;
+}
+
 .create-new-and-guidlines {
   display: flex;
   flex-direction: row;
@@ -14,12 +20,39 @@
   box-shadow: 0 0 2px #d1d3d4;
   padding: 30px;
   background-color: white;
-  width: 100%;
+  width: 130%;
+  height: 100%;
 }
 
 
 .guidlines-card {
+  width: 50%;
+  border: solid 1px #eeeff0;
+  margin-top: 10px;
+  box-shadow: 0 0 2px #d1d3d4;
+  padding: 30px;
+  background-color: white;
+  height: 100%;
+}
 
+.guidlines-card h2 {
+  padding-top: 5px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.guidlines-card p {
+  margin-top: 2px;
+}
+.guidlines-card li {
+  margin-left: 10px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+.guidlines-card-property {
+  width: 50%;
   border: solid 1px #eeeff0;
   margin-top: 10px;
   box-shadow: 0 0 2px #d1d3d4;

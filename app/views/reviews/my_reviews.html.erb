@@ -14,7 +14,7 @@
       <% @reviews.each do |review| %>
         <tr>
           <td><%= review.property.name %></td>
-          <td><%= review.content %></td>
+          <td><%= review.pros %></td>
           <td><%= review.rating %></td>
           <td><%= link_to "Edit", edit_review_path(review), class: "btn btn-primary" %></td>
         </tr>

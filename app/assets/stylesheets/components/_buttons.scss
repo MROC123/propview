@@ -67,3 +67,21 @@
 .button-bookmark i {
   color: rgb(255, 36, 36);
 }
+
+
+.review-button {
+  padding: 12px;
+  border-radius: 25px;
+  background-color: #E5E1FF;
+  box-shadow: 2px 2px 4px rgb(201, 201, 201);
+  text-decoration: none;
+  color: black;
+  border: solid 1px #eeeff0;
+  vertical-align: middle;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}

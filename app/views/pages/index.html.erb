@@ -49,9 +49,12 @@
             <% if result.searchable.reviews.last.nil? %>
               <p><%= "Waiting for first Review!" %></p>
             <% else %>
-            <p><%= result.searchable.reviews.last.rating %> ★</p>
+            <p>Last Review:</p>
+            <h4><%= result.searchable.reviews.last.rating %> ★</h4>
             <h4 class="review-pro">Pros:</h4>
             <p>''<%= result.searchable.reviews.last.pros %>''</p>
+            <h4 class="review-con">Cons:</h4>
+            <p>''<%= result.searchable.reviews.last.cons %>''</p>
             <% end %>
         </div>
       </div>

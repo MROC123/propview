@@ -6,7 +6,11 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    @marker = {lat: "", lng: ""}
+    @marker[:lat] = @property.geocode[0]
+    @marker[:lng] = @property.geocode[1]
     @manager = @property.manager
+
   end
 
   def new
@@ -23,7 +27,6 @@ class PropertiesController < ApplicationController
     else
       render :new
     end
-    # @property.manager = current_user (need to find the Manager ID so property is attached to a manager)
   end
 
 

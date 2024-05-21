@@ -4,7 +4,7 @@
   <div class="row mb-3">
     <div class="custom-manager-input">
       <%= simple_form_for @property do |f| %>
-        <%= f.input :manager_id, collection: @managers, label_method: :name, value_method: :id, prompt: "Select a Manager" %>
+        <%= f.input :manager_id, collection: @managers, label_method: :name, value_method: :id, prompt: "Select a Manager", input_html: { id: 'manager-select' } %>
       <% end %>
     </div>
     <div class="custom-button">
@@ -21,3 +21,10 @@
     <%= f.submit "Submit New Property", class: "btn btn-success" %>
   <% end %>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var managerSelect = document.getElementById("manager-select");
+    managerSelect.options[0].disabled = true;
+  });
+</script>

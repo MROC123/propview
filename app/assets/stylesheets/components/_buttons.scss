@@ -1,13 +1,20 @@
 .select-button {
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 25px;
   background-color: #E5E1FF;
   box-shadow: 2px 2px 4px rgb(201, 201, 201);
   text-decoration: none;
-  height: 60px;
+  height: 40px;
   width: 150px;
   color: black;
   border: solid 1px #eeeff0;
+  vertical-align: middle;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
 }
 
 .btn-search {
@@ -29,4 +36,25 @@
   text-decoration: none;
   justify-content: center;
   margin: auto;
+}
+
+.see-more-button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: $light-purple;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 25px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
 }

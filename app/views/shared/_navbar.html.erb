@@ -10,10 +10,18 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+
+        <div class="top-buttons d-flex align-items-center p-0.5">
+          <button class="select-button"><%= link_to "Add Company", new_manager_path %></button>
+          <button class="select-button"><%= link_to "Add Property", new_property_path %></button>
+        </div>
+
         <% if user_signed_in? %>
-          <li class="nav-item">
+
+<!--           <li class="nav-item">
              <%= form_with url: pages_path, method: :get, class: "d-flex" do %>
                 <%= text_field_tag :query,
                     params[:query],
@@ -25,7 +33,8 @@
           </li>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
+          </li> -->
+
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
@@ -35,6 +44,7 @@
               <%= link_to "Add a Property", new_property_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               <%= link_to "My Properties", my_properties_path(current_user), class: "dropdown-item"if user_signed_in?%>
+
             </div>
           </li>
         <% else %>

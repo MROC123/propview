@@ -33,13 +33,11 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
 
-
     if @review.save
       check_property_id
     else
       render :new
     end
-
 
   end
 

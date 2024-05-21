@@ -10,7 +10,6 @@ class PropertiesController < ApplicationController
     @marker[:lat] = @property.geocode[0]
     @marker[:lng] = @property.geocode[1]
     @manager = @property.manager
-
   end
 
   def new
@@ -51,6 +50,6 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:manager_id, :name, :address, :property_type, :bedrooms, :bathrooms, :photo)
+    params.require(:property).permit(:manager_id, :name, :address, :property_type, :bedrooms, :bathrooms, photos: [])
   end
 end

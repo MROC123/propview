@@ -4,6 +4,7 @@
       <%= image_tag "propviewLogo.png" %>
     <% end %>
 
+    <h1 class="propview-navbar-title d-flex align-items-center">PropView</h1>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,30 +21,16 @@
         </div>
 
         <% if user_signed_in? %>
-
-<!--           <li class="nav-item">
-             <%= form_with url: pages_path, method: :get, class: "d-flex" do %>
-                <%= text_field_tag :query,
-                    params[:query],
-                    class: "form-control",
-                    placeholder: "Type a keyword"
-                %>
-                  <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-                <% end %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li> -->
-
           <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
+            <%# <a class="nav-link" href="#" data-bs-toggle="dropdown"><%= current_user.email %>  <%# </a> %>
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "undraw_Female_avatar_efig.png", class: "avatar", alt: "dropdown menu" %>
+            </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Add a Company", new_manager_path, class: "dropdown-item" %>
               <%= link_to "Add a Property", new_property_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-              <%= link_to "My Properties", my_properties_path(current_user), class: "dropdown-item"if user_signed_in?%>
+            </div>
 
             </div>
           </li>
@@ -52,6 +39,8 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
+
+
       </ul>
     </div>
   </div>

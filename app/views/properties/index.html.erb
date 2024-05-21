@@ -27,15 +27,13 @@
         <div class="refine-search-bar">
         </div>
 
-        <div class="index-property-card">
-          <div class="">
-            <% @properties.each do |property| %>
+        <% @properties.each do |property| %>
+          <div class="index-property-card">
               <p class="index-property-name"><strong><%= property.name %></strong></p>
               <p><%= property.address %></p>
               <p class="select-button text-center d-flex justify-content-end"><%= link_to "See More", property_path(property) %></p>
-            <% end %>
           </div>
-      </div>
+        <% end %>
 
 
   </div>

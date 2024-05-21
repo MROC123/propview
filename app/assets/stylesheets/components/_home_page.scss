@@ -26,7 +26,7 @@
 .search-info-home {
   background-color: #E5E1FF;
   width: 100%;
-  height: 600px;
+  height: 500px;
 }
 
 .search-info-text{
@@ -35,10 +35,13 @@
 
 .search-info-text h1 {
   margin-left: 80px;
-  font-family: "Inter-SemiBold";
-  font-weight: bolder;
-  font-size: 70px;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
 }
 
 

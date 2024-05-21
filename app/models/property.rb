@@ -1,4 +1,5 @@
 class Property < ApplicationRecord
+  has_many_attached :photo
   belongs_to :manager
   belongs_to :user
 

@@ -25,6 +25,8 @@
 
 .similar-properties-card-right{
   right: 0;
+  border-radius: 15px;
+  padding: 5px;
 }
 
 // proeprty photo
@@ -38,36 +40,46 @@
   padding: 3px;
   border: solid 1px #eeeff0;
   box-shadow: 0 0 2px #d1d3d4;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .property-show-title {
   font-size: xx-large;
-  text-align: center;
-  margin-top: 20px;
+  text-align: left;
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.rating-stars {
+  margin-left: 10px;
+  margin-bottom: 0px;
 }
 
 .property-info-top-info {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
 }
 
 .property-show-title-property_type{
-  padding: 20px;
+  align-items: left;
+  padding: 5px;
 }
 
 .property-show-title-beds {
-  padding: 20px;
+  align-items: left;
+  padding: 10px;
 }
 
 .property-show-title-bathroom{
-  padding: 20px;
+  align-items: left;
+  padding: 10px;
 }
 
 .property-show-title-reviews {
-  padding: 20px;
+  align-items: left;
+  padding: 10px;
 }
 // review-similar
 
@@ -82,30 +94,6 @@
   margin-bottom: 0rem;
 }
 
-.see-more-button {
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  background-color: $light-purple;
-  width: 100%;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  box-shadow: 2px 2px 2px grey;
-  padding: 15px;
-  border-radius: 50px;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-variation-settings:
-    "slnt" 0;
-}
-
 
 //building company card
 
@@ -116,19 +104,18 @@
 }
 
 .building-comany-heading{
-
-  padding: 3px;
+  padding-top: 15px;
+  padding-left: 15px;
 }
 
 .building-comany-heading h3 {
   font-size: larger;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  margin-top: 15px;
   margin-left: 5px;
 }
 
 .company-property-photo-small {
-  border-radius: 15px;
+  border-radius: 10px;
 }
 //
 
@@ -139,7 +126,9 @@
 }
 
 .manager-address-card {
-  margin-top: 15px;
+  margin: 15px;
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 //reviews
 

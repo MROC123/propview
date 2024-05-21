@@ -15,6 +15,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    @managers = Manager.all
     @manager = Manager.new
   end
 
@@ -49,6 +50,6 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:name, :address, :property_type, :bedrooms, :bathrooms, :create_new_manager)
+    params.require(:property).permit(:name, :address, :property_type, :bedrooms, :bathrooms, :create_new_manager, :photo)
   end
 end

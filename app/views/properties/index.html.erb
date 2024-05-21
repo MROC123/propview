@@ -1,7 +1,40 @@
-<h1>Index Properties</h1>
+<div class="property-index-bg">
+  <div class="index-image-banner">
+    <img src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="house-banner-image" height="250px" width="100%">
+  </div>
 
-<% @properties.each do |property| %>
-<p><%= property.name %></p>
-<p><%= property.address %></p>
-<p><%= link_to "Select", property_path(property) %></p>
-<% end %>
+
+
+  <div class="container">
+
+      <div class="index-search-bar m-5 p-2">
+
+          <div id="search-bar">
+
+              <%= form_with url: pages_path, method: :get, class: "d-flex inside-bar" do %>
+                <%= text_field_tag :query,
+                      params[:query],
+                      class: "form-control",
+                      placeholder: " Search for Property, Company or Address"
+                  %>
+                <%= submit_tag "Search", name: "", class: "btn btn-search" %>
+              <% end %>
+
+          </div>
+
+      </div>
+
+        <div class="refine-search-bar">
+        </div>
+
+        <% @properties.each do |property| %>
+          <div class="index-property-card">
+              <p class="index-property-name"><strong><%= property.name %></strong></p>
+              <p><%= property.address %></p>
+              <p class="select-button text-center d-flex justify-content-end"><%= link_to "See More", property_path(property) %></p>
+          </div>
+        <% end %>
+
+
+  </div>
+</div>

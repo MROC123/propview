@@ -1,0 +1,8 @@
+<h1>Your Bookmarked Managers</h1>
+
+<% @bookmarks.each do |manager| %>
+  <div>
+    <h3><%= link_to manager.name, manager_path(manager) %></h3>
+    <%= button_to 'Remove Bookmark', bookmark_path(manager), method: :delete, class: "btn btn-danger" %>
+  </div>
+<% end %>

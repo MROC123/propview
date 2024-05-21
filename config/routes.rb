@@ -8,12 +8,15 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get 'my_properties', to: 'properties#my_properties', as: :my_properties
   resources :pages, only: [:index]
+  get 'bookmarks', to: 'bookmarks#index', as: 'user_bookmarks'
 
   resources :properties, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :new, :create, :destroy, :edit, :update]
   end
 
+
   resources :managers, only: [:index, :show, :new, :create] do
+    resources :bookmarks, only: [:create, :destroy]
     resources :reviews, only: [:new, :create, :destroy, :edit, :update]
     collection do
       get :search

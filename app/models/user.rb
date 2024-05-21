@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :properties, dependent: :destroy
+  has_many :bookmarks
+  has_many :bookmarked_managers, through: :bookmarks, source: :manager
 end

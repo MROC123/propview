@@ -1,8 +1,30 @@
 <h1>Your Bookmarked Managers</h1>
+<div class="container">
 
 <% @bookmarks.each do |manager| %>
-  <div>
-    <h3><%= link_to manager.name, manager_path(manager) %></h3>
-    <%= button_to 'Remove Bookmark', bookmark_path(manager), method: :delete, class: "btn btn-danger" %>
+  <div class="bookmark-cards">
+
+    <div class="bookmark-cards-top">
+      <h3><%= link_to manager.name, manager_path(manager) %></h3>
+      <%= button_to 'Remove Bookmark', manager_bookmarks_path(manager), method: :delete, class: "btn btn-danger" %>
+    </div>
+
+    <div class="bookmark-cards-rating">
+     <h2 class="review-pro"><%= ratingvalue = manager.reviews.map { |review| review.rating }
+              if ratingvalue.empty?
+                ""
+              else
+            "★ #{(ratingvalue.sum / ratingvalue.count).round(1)}"
+            end
+            %></h2>
+    </div>
+
+  <div class="bookmarks-cards-address">
+    <h4><%= manager.address %></h4>
+  </div>
+
+
   </div>
 <% end %>
+
+</div>

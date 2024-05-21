@@ -1,16 +1,11 @@
 <div class="container">
 
-  <div class="top-buttons">
-    <button class="select-button"><%= link_to "Add Company/Owner", new_manager_path %></button>
-    <button class="select-button"><%= link_to "Add Property", new_property_path %></button>
-  </div>
-
   <div class="row my-2">
 
     <div class="manager-show-info">
 
       <div >
-        <img class="manager-logo" src="https://img.freepik.com/premium-vector/company-icon-simple-element-illustration-company-concept-symbol-design-can-be-used-web-mobile_159242-7784.jpg" alt="">
+        <img class="manager-logo d-flex mt-1" src="https://img.freepik.com/premium-vector/company-icon-simple-element-illustration-company-concept-symbol-design-can-be-used-web-mobile_159242-7784.jpg" alt="">
       </div>
 
       <div class="manager-show-info-top">
@@ -22,9 +17,13 @@
         </div>
         <div class="manager-show-info-bookmark">
           <% if current_user.bookmarked_managers.include?(@manager) %>
-            <%= button_to 'Remove Bookmark', manager_bookmark_path(@manager, current_user.bookmarks.find_by(manager: @manager)), method: :delete, class: "btn btn-danger" %>
+            <%= button_to manager_bookmark_path(@manager, current_user.bookmarks.find_by(manager: @manager)), method: :delete, class: "btn btn-danger" do %>
+              <i id="heart-icon" class="fa-regular fa-heart"></i>
+            <% end %>
           <% else %>
-            <%= button_to 'Bookmark', manager_bookmarks_path(@manager), method: :post, class: "select-button" %>
+            <%= button_to manager_bookmarks_path(@manager), method: :post, class: "btn btn-danger" do %>
+              <i id="heart-icon" class="fa-solid fa-heart"></i>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -43,7 +42,6 @@
             "★ #{(ratingvalue.sum / ratingvalue.count).round(1)}"
             end
             %></h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
         </div>
       <%# </div> %>
       </div>
@@ -117,16 +115,20 @@
           </div>
         </div>
 
-        <div class="managers-properties">
-            <h3>Attached Properties:</h3>
-            <% @manager.properties.each do |property| %>
-            <div class="manager-properties-small-card">
-              <p class="manager-properties-small-card-text"><%= link_to "#{property.address}", property_path(property) %></p>
-              <p>No. of Reviews:</p>
-              <p><%= property.reviews.count %></p>
+          <div class="">
+
+            <div class="managers-properties-card">
+                <h3 class="text-center">Properties</h3>
+                <% @manager.properties.each do |property| %>
+                <div class="manager-properties-small-card">
+                  <p class="manager-properties-small-card-text"><%= link_to "#{property.address}", property_path(property) %></p>
+                  <p>No. of Reviews:</p>
+                  <p><%= property.reviews.count %></p>
+                </div>
+                <% end %>
             </div>
-            <% end %>
-        </div>
+
+          </div>
 
        </div>
 
@@ -135,4 +137,5 @@
 
   </div>
 
+</div>
 </div>

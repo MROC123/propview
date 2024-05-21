@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <div class="row my-2">
+  <div>
     <div class="property-page-top">
 
       <div class="property-photos-card p-3">
@@ -44,9 +44,23 @@
     </div>
       <div class="property-info-top p-3">
 
-          <h1 class="property-show-title text-left"><%= @property.address %></h1>
-          <p class="rating-stars text-left">⭐️⭐️⭐️⭐️⭐️</p>
+          <div class="property-info-top-address-rating">
+            <div>
+              <h1 class="property-show-title text-left"><%= @property.address %></h1>
+            </div>
+            <div>
+              <h1 class="property-show-title text-left"><%= ratingvalue = @property.reviews.map { |review| review.rating }
+                if ratingvalue.empty?
+                  ""
+                else
+              "★ #{(ratingvalue.sum / ratingvalue.count).round(1)}"
+              end
+              %></h1>
+            </div>
+          </div>
+
             <div class="property-info-top-info">
+
               <div class="property-show-title-property_type">
                 <p class="info-name"><strong>PROPERTY TYPE</strong></p>
                 <p class="text-left m-0"><%= @property.property_type %></p>

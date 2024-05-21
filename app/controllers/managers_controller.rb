@@ -13,7 +13,7 @@ class ManagersController < ApplicationController
   end
 
   def new
-    @property.new
+    @property = Property.new
     @manager = Manager.new
     @managers = Manager.all
   end

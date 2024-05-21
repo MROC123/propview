@@ -5,7 +5,7 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 10px;
-
+  margin-bottom: 35px;
 }
 
 
@@ -88,6 +88,7 @@
   flex-direction: row;
   margin-top: 10px;
   gap: 7px;
+  margin-top: 30px;
 }
 
 .info-name {
@@ -101,6 +102,7 @@
   border: solid 1px #eeeff0;
   box-shadow: 0 0 2px #d1d3d4;
   background-color: $light-gray;
+  padding: 5px;
 }
 
 .building-comany-heading{

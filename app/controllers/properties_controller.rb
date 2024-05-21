@@ -21,6 +21,7 @@ class PropertiesController < ApplicationController
     if @property.save
       redirect_to @property, notice: "Property has been created successfully"
     else
+      @managers = Manager.all
       render :new
     end
     # @property.manager = current_user (need to find the Manager ID so property is attached to a manager)
@@ -47,6 +48,6 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:name, :address, :property_type, :bedrooms, :bathrooms, :create_new_manager, :photo)
+    params.require(:property).permit(:manager_id, :name, :address, :property_type, :bedrooms, :bathrooms, :photo)
   end
 end

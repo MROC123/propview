@@ -1,7 +1,37 @@
-<h1>Index Managers</h1>
+<div class="property-index-bg">
+  <div class="index-image-banner">
+    <img src="https://images.unsplash.com/photo-1464082354059-27db6ce50048?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="manager-house-banner-image" height="250px" width="100%">
+  </div>
 
-<% @managers.each do |manager| %>
-<p><%= manager.name %></p>
-<p><%= manager.address %></p>
-<p><%= link_to "Select", manager_path(manager) %></p>
-<% end %>
+  <div class="container">
+
+      <div class="index-search-bar m-5 p-2">
+
+          <div id="search-bar">
+
+              <%= form_with url: pages_path, method: :get, class: "d-flex inside-bar" do %>
+                <%= text_field_tag :query,
+                      params[:query],
+                      class: "form-control",
+                      placeholder: " Search for Property, Company or Address"
+                  %>
+                <%= submit_tag "Search", name: "", class: "btn btn-search" %>
+              <% end %>
+
+          </div>
+
+      </div>
+
+        <div class="refine-search-bar">
+        </div>
+
+            <% @managers.each do |manager| %>
+              <div class="index-property-card">
+                <p><%= manager.name %></p>
+                <p><%= manager.address %></p>
+                <p class="select-button text-center d-flex justify-content-end"><%= link_to "Select", manager_path(manager) %></p>
+              </div>
+            <% end %>
+
+  </div>
+</div>

@@ -39,10 +39,11 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
-
-
   end
 
+def my_reviews
+  @reviews = current_user.reviews
+end
 
 
   private

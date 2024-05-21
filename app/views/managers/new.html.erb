@@ -1,11 +1,28 @@
 <h1>Create Manager</h1>
-
+<div class="create-new-container">
 
 <div class="container">
-  <%= simple_form_for [@manager] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :website %>
-    <%= f.submit "Submit New Company", class: "btn btn-success" %>
-<% end %>
+
+<div class="create-new-and-guidlines">
+  <div class="create-new">
+    <%= simple_form_for [@manager] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :website %>
+      <%= f.submit "Submit New Company", class: "btn btn-success" %>
+  <% end %>
+</div>
+
+<div class="guidlines-card">
+  <h1>Keep it Real</h1>
+  <p>Thank you for contributing to the community.
+  Your opinion will help others make decisions about jobs and companies.
+  </p>
+
+</div>
+
+</div>
+
+</div>
+
 </div>

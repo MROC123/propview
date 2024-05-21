@@ -11,12 +11,17 @@
 }
 
 .manager-logo {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
   object-fit: cover;
   border: solid;
   margin: 10px;
+}
+
+.manager-show-info-bookmark {
+  text-align: center;
+  align-items: center;
 }
 
 .manager-show-info-top-bookmark {
@@ -24,11 +29,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .manager-show-info-top{
   margin-top: 20px;
   padding: 10px;
+  width: 100%;
 }
 .manager-show-name {
   font-size: x-large;
@@ -53,7 +60,7 @@
 .manager-properties-small-card {
   border: solid 1px #eeeff0;
   box-shadow: 0 0 2px #d1d3d4;
-  padding: 5px;
+  padding: 25px;
   border-radius: 15px;
   margin-top: 10px;
 }
@@ -69,4 +76,10 @@
 
 .manager-properties-small-card p {
   text-align: center;
+}
+
+#heart-icon {
+  font-size: 30px;
+  justify-content: right;
+  // background-color: white;
 }

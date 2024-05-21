@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_21_111738) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_21_131615) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_111738) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "website"
     t.index ["user_id"], name: "index_managers_on_user_id"
   end
 
@@ -83,6 +86,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_111738) do
     t.string "new_manager_name"
     t.string "new_manager_address"
     t.boolean "create_new_manager"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["manager_id"], name: "index_properties_on_manager_id"
     t.index ["user_id"], name: "index_properties_on_user_id"
   end
@@ -102,6 +107,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_111738) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
     t.index ["manager_id"], name: "index_reviews_on_manager_id"
     t.index ["property_id"], name: "index_reviews_on_property_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"

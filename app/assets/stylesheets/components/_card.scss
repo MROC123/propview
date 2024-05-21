@@ -20,7 +20,10 @@
 //manager show
 
 .manager-show-info {
-  background-color: $light-gray;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px;
+  box-shadow: 5px 5px 5px $medium-gray;
   border-radius: 10px;
 }
 
@@ -32,6 +35,10 @@
 .manager-show-reviews-card {
   background-color: $light-beige;
   border-radius: 10px;
+}
+
+.managers-properties-card {
+
 }
 
 
@@ -49,6 +56,9 @@
 //universal
 
 .map-card {
-  background-color: $light-beige;
+  background-color: white;
+  padding: 10px;
   border-radius: 10px;
+  border: solid 1px #eeeff0;
+  box-shadow: 0 0 2px #d1d3d4;
 }

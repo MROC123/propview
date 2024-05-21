@@ -33,7 +33,6 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
 
-
     if @review.save
       check_property_id
     else
@@ -57,7 +56,7 @@ end
   end
 
   def review_params
-    params.require(:review).permit(:rating, :pros, :cons, :advice, :location, :rent, :service_charge, :property_id)
+    params.require(:review).permit(:title, :rating, :pros, :cons, :advice, :location, :rent, :service_charge, :property_id)
   end
 
   def set_review

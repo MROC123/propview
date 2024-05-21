@@ -7,9 +7,10 @@ class ManagersController < ApplicationController
 
   def show
     @manager = Manager.find(params[:id])
+    @marker = {lat: "", lng: ""}
+    @marker[:lat] = @manager.geocode[0]
+    @marker[:lng] = @manager.geocode[1]
     @reviews = @manager.reviews
-    # && @Properties.reviews (delete this code)
-    # raise
   end
 
   def new

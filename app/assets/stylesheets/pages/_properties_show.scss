@@ -31,16 +31,17 @@
 
 // proeprty photo
 .property-photos-card{
-  width: 70%;
+  width: 100%;
 }
 
 //property info top
 
 .property-info-top{
-  padding: 3px;
+  padding: 0px;
   border: solid 1px #eeeff0;
   box-shadow: 0 0 2px #d1d3d4;
   border-radius: 10px;
+  margin-bottom: 35px;
 }
 
 .property-show-title {
@@ -50,6 +51,11 @@
   margin-left: 5px;
 }
 
+.property-info-top-address-rating {
+  display: flex;
+  justify-content: space-between;
+}
+
 .rating-stars {
   margin-left: 10px;
   margin-bottom: 0px;
@@ -57,9 +63,10 @@
 
 .property-info-top-info {
   display: flex;
-  flex-direction: column;
-  text-align: left;
+  flex-direction: row;
+  text-align: center;
   margin-top: 20px;
+  justify-content: space-evenly;
 }
 
 .property-show-title-property_type{

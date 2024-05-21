@@ -1,12 +1,18 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
   <div class="container-fluid">
     <div class="logo-and-name">
+      
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "PropViewLogo.png" %>
     <% end %>
+
     </div>
 
+<!--     <h1 class="propview-navbar-title text-start">PropView</h1> -->
 
+
+  <div class="align-items-right">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,9 +33,9 @@
               <%= image_tag "undraw_Female_avatar_efig.png", class: "avatar", alt: "dropdown menu" %>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Add a Company", new_manager_path, class: "dropdown-item" %>
-              <%= link_to "Add a Property", new_property_path, class: "dropdown-item" %>
+              <%= link_to "My Reviews", my_reviews_path, class: "dropdown-item" %>
               <%= link_to "Bookmarks", user_bookmarks_path, class: "dropdown-item" %>
+              <%= link_to "Edit Profile", edit_profile_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
 
@@ -43,6 +49,5 @@
 
 
       </ul>
-    </div>
   </div>
 </div>

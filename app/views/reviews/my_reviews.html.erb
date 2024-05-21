@@ -1,0 +1,26 @@
+<h1>My Reviews</h1>
+
+<% if @reviews.any? %>
+  <table>
+    <thead>
+      <tr>
+      <th>Property</th>
+      <th>Content</th>
+      <th>Rating</th>
+      <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reviews.each do |review| %>
+        <tr>
+          <td><%= review.property.name %></td>
+          <td><%= review.content %></td>
+          <td><%= review.rating %></td>
+          <td><%= link_to "Edit", edit_review_path(review), class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
+    <p>You haven't created any reviews yet.</p>
+  <% end %>

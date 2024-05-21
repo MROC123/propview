@@ -1,0 +1,36 @@
+<h1>Edit Profile</h1>
+
+<%= form_for @user, url: profile_path, html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %>
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile_picture %>
+    <%= f.file_field :profile_picture %>
+    <% if @user.profile_picture.attached? %>
+      <div>
+        <%= image_tag @user.profile_picture, class: 'profile-picture-preview' %>
+      </div>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update Profile" %>
+  </div>
+<% end %>

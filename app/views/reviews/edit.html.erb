@@ -1,0 +1,17 @@
+<h1>Edit Review</h1>
+
+<%= form_for @review do |f| %>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rating %>
+    <%= f.number_field :rating, min: 1, max: 5 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update Review", class: "btn btn-success" %>
+  </div>
+<% end %>

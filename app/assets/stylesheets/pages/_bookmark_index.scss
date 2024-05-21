@@ -1,0 +1,26 @@
+.bookmark-cards {
+  margin-top: 30px;
+  border: solid 1px #eeeff0;
+  box-shadow: 0 0 2px #d1d3d4;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+
+.bookmark-cards-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+
+.bookmark-cards-top a {
+  text-decoration: none;
+  color: black;
+}
+
+.bookmarks-cards-address {
+  margin-left: 5px;
+}

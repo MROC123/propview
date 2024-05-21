@@ -25,5 +25,6 @@ class BookmarksController < ApplicationController
 
   def index
     @bookmarks = current_user.bookmarked_managers
+
   end
 end

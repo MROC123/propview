@@ -29,9 +29,36 @@
 
         <% @properties.each do |property| %>
           <div class="index-property-card">
-              <p class="index-property-name"><strong><%= property.name %></strong></p>
+            <div class="index-property-card-top">
+                <div class="index-property-card-top-top">
+                  <h2 class="review-pro"><%= ratingvalue = property.reviews.map { |review| review.rating }
+                    if ratingvalue.empty?
+                      ""
+                    else
+                  "★ #{(ratingvalue.sum / ratingvalue.count).round(1)}"
+                  end
+                  %></h2>
+                  <p class="index-property-name"><strong><%= property.name %></strong></p>
+                </div>
+                <p class="select-button text-center d-flex justify-content-end"><%= link_to "See More", property_path(property) %></p>
+            </div>
+
               <p><%= property.address %></p>
-              <p class="select-button text-center d-flex justify-content-end"><%= link_to "See More", property_path(property) %></p>
+
+              <% if property.reviews.last.nil? %>
+                <p><%= "Waiting for first Review!" %></p>
+              <% else %>
+            <div class="index-property-card-review">
+              <p>Last Review:</p>
+              <h4><%= property.reviews.last.rating %> ★</h4>
+              <h4 class="review-pro">Pros:</h4>
+              <p>''<%= property.reviews.last.pros %>''</p>
+              <h4 class="review-con">Cons:</h4>
+              <p>''<%= property.reviews.last.cons %>''</p>
+            </div>
+              <% end %>
+
+
           </div>
         <% end %>
 

@@ -88,7 +88,7 @@
               <h1 class="property-show-title text-left"><%= @property.address %></h1>
             </div>
             <div>
-              <h1 class="property-show-title text-left"><%= ratingvalue = @property.reviews.map { |review| review.rating }
+              <h1 class="property-show-title text-left review-pro"><%= ratingvalue = @property.reviews.map { |review| review.rating }
                 if ratingvalue.empty?
                   ""
                 else
@@ -128,13 +128,7 @@
       <div class="col-12 col-lg-9 ">
         <div class="reviews-card">
             <div class="review-on-top">
-              <h2>Reviews: <%= ratingvalue = @property.reviews.map { |review| review.rating }
-                if ratingvalue.empty?
-                  ""
-                else
-              "★ #{(ratingvalue.sum / ratingvalue.count).round(1)}"
-              end
-              %></h2>
+              <h2>Reviews:</h2>
               <button class="select-button"><%= link_to "Add a Review", new_manager_review_path(@manager, property_id: @property.id) %></button>
             </div>
 

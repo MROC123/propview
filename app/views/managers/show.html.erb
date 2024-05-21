@@ -4,7 +4,7 @@
 
     <div class="manager-show-info">
 
-      <div >
+      <div class="manager-show-info-avatar">
         <img class="manager-logo d-flex mt-1" src="https://img.freepik.com/premium-vector/company-icon-simple-element-illustration-company-concept-symbol-design-can-be-used-web-mobile_159242-7784.jpg" alt="">
       </div>
 
@@ -21,7 +21,7 @@
               <i id="heart-icon" class="fa-regular fa-heart"></i>
             <% end %>
           <% else %>
-            <%= button_to manager_bookmarks_path(@manager), method: :post, class: "btn btn-danger" do %>
+            <%= button_to manager_bookmarks_path(@manager), method: :post, class: "button-bookmark" do %>
               <i id="heart-icon" class="fa-solid fa-heart"></i>
             <% end %>
           <% end %>

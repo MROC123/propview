@@ -11,6 +11,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    @managers = Manager.all
     @manager = Manager.new
   end
 

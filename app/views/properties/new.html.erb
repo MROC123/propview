@@ -1,15 +1,23 @@
 <h1>New Property</h1>
 
 <div class="container">
+  <div class="row mb-3">
+    <div class="custom-manager-input">
+      <%= simple_form_for @property do |f| %>
+        <%= f.input :manager_id, collection: @managers, label_method: :name, value_method: :id, prompt: "Select a Manager" %>
+      <% end %>
+    </div>
+    <div class="custom-button">
+      <%= link_to 'Add New Manager', new_manager_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
 
-  <%= simple_form_for [@property] do |f| %>
+  <%= simple_form_for @property do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :property_type %>
     <%= f.input :bedrooms %>
     <%= f.input :bathrooms %>
-    <%# <%= f.select :manager, Manager.all.name %>
     <%= f.submit "Submit New Property", class: "btn btn-success" %>
-<% end %>
-
+  <% end %>
 </div>

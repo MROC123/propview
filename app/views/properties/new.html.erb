@@ -8,6 +8,7 @@
     <%= f.input :property_type %>
     <%= f.input :bedrooms %>
     <%= f.input :bathrooms %>
+    <%= f.input :photo, as: :file %>
     <%# <%= f.select :manager, Manager.all.name %>
     <%= f.submit "Submit New Property", class: "btn btn-success" %>
 <% end %>

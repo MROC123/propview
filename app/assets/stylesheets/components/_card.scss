@@ -11,10 +11,9 @@
 }
 
 
-
 .similar-properties-card {
-  box-shadow: 2px 2px 2px grey;
-  border-radius: 5px;
+  box-shadow: 2px 2px 2px $light-gray;
+  border-radius: 10px;
 }
 
 
@@ -26,8 +25,8 @@
 }
 
 .manager-show-other-properties-card {
-  box-shadow: 2px 2px 2px grey;
-  border-radius: 5px;
+  box-shadow: 2px 2px 2px $light-gray;
+  border-radius: 10px;
 }
 
 .manager-show-reviews-card {
@@ -35,6 +34,16 @@
   border-radius: 10px;
 }
 
+
+//property index
+
+.index-property-card {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px;
+  box-shadow: 2px 2px 2px $light-gray;
+  padding: 50px;
+}
 
 //universal
 

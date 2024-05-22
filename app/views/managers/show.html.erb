@@ -5,7 +5,8 @@
     <div class="manager-show-info">
 
       <div class="manager-show-info-avatar">
-        <img class="manager-logo d-flex mt-1" src="https://img.freepik.com/premium-vector/company-icon-simple-element-illustration-company-concept-symbol-design-can-be-used-web-mobile_159242-7784.jpg" alt="">
+        <%= cl_image_tag @manager.photo.key, crop: :fill, class: "manager-logo d-flex mt-1" %>
+        <%# <img class="manager-logo d-flex mt-1" src="https://img.freepik.com/premium-vector/company-icon-simple-element-illustration-company-concept-symbol-design-can-be-used-web-mobile_159242-7784.jpg" alt=""> %>
       </div>
 
       <div class="manager-show-info-top">

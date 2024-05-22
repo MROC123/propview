@@ -69,6 +69,7 @@
 }
 
 
+
 .review-button {
   padding: 12px;
   border-radius: 25px;
@@ -78,6 +79,24 @@
   color: black;
   border: solid 1px #eeeff0;
   vertical-align: middle;
+}
+
+.manager-index-button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background-color: $light-purple;
+  padding: 15px;
+  margin-left: 65px;
+  margin-right: 75px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 25px;
+  font-size: 20px;
+
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;

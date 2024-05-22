@@ -13,7 +13,7 @@
       <div class="bookmark-cards">
 
         <div class="bookmark-cards-top">
-          <h3 class="index-manager-name"><%= link_to manager.name, manager_path(manager) %></h3>
+          <h3 class="index-manager-name"><%= link_to "#{manager.name}", manager_path(manager) %></h3>
           <%= button_to 'Remove', manager_bookmarks_path(manager), method: :delete, class: "manager-index-button mb-0" %>
         </div>
 

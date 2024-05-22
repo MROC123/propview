@@ -93,8 +93,8 @@
                 </div>
                 <div class="review-cards-ras">
                   <p><%= review.location.empty? ? "" : "Location: #{review.location}" %></p>
-                  <p><%= review.rent.nil? ? "" : "Rent: #{review.rent.to_i} p.m" %></p>
-                  <p><%= review.service_charge.nil? ? "" : "Service Charge: #{review.service_charge.to_i} p.a" %></p>
+                  <p><%= review.rent.nil? ? "" : "Rent: £#{review.rent.to_i} p.m" %></p>
+                  <p><%= review.service_charge.nil? ? "" : "Service Charge: £#{review.service_charge.to_i} p.a" %></p>
                 </div>
               </div>
             <% end %>

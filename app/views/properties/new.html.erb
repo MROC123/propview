@@ -1,14 +1,31 @@
 <div class="create-new-container">
 
-<h1>New Property</h1>
+
 
 <div class="container">
-<div class="create-new-and-guidlines">
-<div class="create-new">
-  <div class="row mb-3">
-    <div class="custom-button mb-2">
+
+
+
+
+<div class="property-create-new-top">
+<div class="property-create-new-top-inside">
+ <h1>New Property</h1>
+ <div>
+  <p>When creating a new property, it must be attached to a Landlord, Owner or Manager of that property.</p>
+  <p>If you can't find the manager in the form, please add a new manager below.</p>
+ </div>
+    <div class="property-create-new-top-button">
       <%= link_to 'Add a Company or Manager', new_manager_path, class: 'review-button' %>
     </div>
+</div>
+</div>
+
+<div class="create-new-and-guidlines">
+
+
+
+<div class="create-new">
+  <div class="row mb-3">
   </div>
 
   <%= simple_form_for @property, url: properties_path, method: :post, html: { class: 'form-horizontal' } do |f| %>

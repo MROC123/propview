@@ -29,6 +29,6 @@ class ManagersController < ApplicationController
   private
 
   def manager_params
-    params.require(:manager).permit(:name, :address)
+    params.require(:manager).permit(:name, :address, :photo, :website)
   end
 end

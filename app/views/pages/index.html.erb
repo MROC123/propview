@@ -51,7 +51,7 @@
           </div>
 
             <% if result.searchable.reviews.last.nil? %>
-            <button class="select-button"><%= link_to "Add Reviews", result.searchable_type == "Manager" ? manager_path(result.searchable.id) : property_path(result.searchable.id) %></button>
+            <button class="select-button"><%= link_to "Add Review", result.searchable_type == "Manager" ? manager_path(result.searchable.id) : property_path(result.searchable.id) %></button>
             <% else %>
             <button class="select-button"><%= link_to "More Reviews", result.searchable_type == "Manager" ? manager_path(result.searchable.id) : property_path(result.searchable.id) %></button>
             <% end %>
@@ -63,9 +63,9 @@
 
         <div class="search-cards-review">
             <% if result.searchable.reviews.last.nil? %>
-              <p><%= "Waiting for first Review!" %></p>
+              <p><%= "No reviews for this property yet" %></p>
             <% else %>
-            <p>Last Review:</p>
+            <p>Latest Review:</p>
             <h4><%= result.searchable.reviews.last.rating %> ★</h4>
             <h4 class="review-pro">Pros:</h4>
             <p>''<%= result.searchable.reviews.last.pros %>''</p>

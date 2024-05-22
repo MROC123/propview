@@ -22,13 +22,14 @@
   </div>
 
   <div class="field">
-    <%= f.label :profile_picture %>
-    <%= f.file_field :profile_picture %>
-    <% if @user.profile_picture.attached? %>
-      <div>
-        <%= image_tag @user.profile_picture, class: 'profile-picture-preview' %>
-      </div>
-    <% end %>
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
+    <%# <% if @user.photo.attached? %>
+      <%# <div> %>
+        <%# <%= image_tag @user.profile_picture, class: 'profile-picture-preview' %>
+        <%# <%= cl_image_tag @user.photo.key, crop: :fill, class: 'profile-picture-preview' %>
+      <%# </div> %>
+    <%# <% end %>
   </div>
   <div class="actions">
     <%= f.submit "Update Profile" %>

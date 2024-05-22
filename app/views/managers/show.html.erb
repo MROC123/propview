@@ -4,7 +4,9 @@
 
     <div class="manager-show-info">
 
+
       <div class="manager-show-info-avatar">
+
         <% if @manager.photo.attached? %>
           <%= cl_image_tag @manager.photo.key, crop: :fill, class: "manager-logo d-flex mt-1" %>
         <% else %>
@@ -63,8 +65,10 @@
             else
               "★ #{(ratingvalue.sum / ratingvalue.count).round(1)}"
             end
+
           %></h2>
           <button class="select-button"><%= link_to "Add a Review", new_manager_review_path(@manager) %></button>
+
         </div>
 
         <div class="review-section">

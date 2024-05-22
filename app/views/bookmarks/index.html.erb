@@ -10,8 +10,10 @@
       <% manager = bookmark.manager %>
       <div class="bookmark-cards">
         <div class="bookmark-cards-top">
+
           <h3 class="index-manager-name"><%= link_to manager.name, manager_path(manager) %></h3>
           <%= button_to 'Remove', manager_bookmark_path(manager, bookmark), method: :delete, class: "manager-index-button mb-0" %>
+
         </div>
 
         <div class="bookmark-cards-rating">

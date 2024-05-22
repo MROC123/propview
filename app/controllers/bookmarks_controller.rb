@@ -21,9 +21,7 @@ class BookmarksController < ApplicationController
     end
   end
 
-
-
   def index
-    @bookmarks = current_user.bookmarked_managers
+    @bookmarks = current_user.bookmarks.includes(:manager)
   end
 end

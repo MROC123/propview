@@ -4,9 +4,12 @@
 
     <div class="manager-show-info">
 
-      <div class="manager-show-info-avatar">
-        <%= cl_image_tag @manager.photo.key, crop: :fill, class: "manager-logo d-flex mt-1" %>
-        <%# <img class="manager-logo d-flex mt-1" src="https://img.freepik.com/premium-vector/company-icon-simple-element-illustration-company-concept-symbol-design-can-be-used-web-mobile_159242-7784.jpg" alt=""> %>
+  <div class="manager-show-info-avatar">
+        <% if @manager.photo.attached? %>
+          <%= cl_image_tag @manager.photo.key, crop: :fill, class: "manager-logo d-flex mt-1" %>
+        <% else %>
+          <img class="manager-logo d-flex mt-1" src="https://img.freepik.com/premium-vector/company-icon-simple-element-illustration-company-concept-symbol-design-can-be-used-web-mobile_159242-7784.jpg" alt="Default logo">
+        <% end %>
       </div>
 
       <div class="manager-show-info-top">

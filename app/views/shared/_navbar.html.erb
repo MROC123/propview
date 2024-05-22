@@ -33,6 +33,8 @@
               <%= image_tag "undraw_Female_avatar_efig.png", class: "avatar", alt: "dropdown menu" %>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Properties", properties_path, class: "dropdown-item" %>
+              <%= link_to "Companies and Owners", managers_path, class: "dropdown-item" %>
               <%= link_to "My Reviews", my_reviews_path, class: "dropdown-item" %>
               <%= link_to "Bookmarks", user_bookmarks_path, class: "dropdown-item" %>
               <%= link_to "Edit Profile", edit_profile_path, class: "dropdown-item" %>
@@ -50,5 +52,6 @@
 
       </ul>
   </div>
+</div>
 </div>
 </div>

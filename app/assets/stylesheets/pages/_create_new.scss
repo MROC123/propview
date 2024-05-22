@@ -1,0 +1,28 @@
+.create-new-container {
+  background-color: #FCFBF3;
+}
+
+.create-new-and-guidlines {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.create-new {
+  border: solid 1px #eeeff0;
+  margin-top: 10px;
+  box-shadow: 0 0 2px #d1d3d4;
+  padding: 30px;
+  background-color: white;
+  width: 100%;
+}
+
+
+.guidlines-card {
+
+  border: solid 1px #eeeff0;
+  margin-top: 10px;
+  box-shadow: 0 0 2px #d1d3d4;
+  padding: 30px;
+  background-color: white;
+}

@@ -15,8 +15,9 @@
   margin-top: 30px;
   border: solid 1px #eeeff0;
   box-shadow: 0 0 2px #d1d3d4;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
+  background-color: white;
 }
 
 .search-cards-top {
@@ -44,8 +45,9 @@
 }
 
 .search-cards-title h3 {
-  margin-left: 10px;
-  margin-top: 15px;
+  margin-left: 15px;
+  font-weight: bold;
+  align-items: center;
 }
 
 .search-cards-title button {
@@ -63,6 +65,12 @@
 .search-cards-review {
   padding: 5px;
   margin-left: 10px;
+}
+
+.search-cards-overall-rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #search-bar {

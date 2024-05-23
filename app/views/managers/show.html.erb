@@ -23,12 +23,12 @@
           </div>
           <div class="manager-show-info-bookmark">
             <% if current_user.bookmarked_managers.include?(@manager) %>
-              <%= button_to manager_bookmark_path(@manager, current_user.bookmarks.find_by(manager: @manager)), method: :delete, class: "btn btn-danger" do %>
-                <i id="heart-icon" class="fa-regular fa-heart"></i>
+              <%= button_to manager_bookmark_path(@manager, current_user.bookmarks.find_by(manager: @manager)), method: :delete, class: "button-bookmark" do %>
+                <i id="heart-icon" class="bi bi-heart-fill"></i>
               <% end %>
             <% else %>
               <%= button_to manager_bookmarks_path(@manager), method: :post, class: "button-bookmark" do %>
-                <i id="heart-icon" class="fa-solid fa-heart"></i>
+                <i id="heart-icon" class="bi bi-heart"></i>
               <% end %>
             <% end %>
           </div>
@@ -131,3 +131,5 @@
 
   <div class="row my-2">
   </div>
+
+</div>

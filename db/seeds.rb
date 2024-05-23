@@ -13,7 +13,7 @@ Property.destroy_all
 Manager.destroy_all
 User.destroy_all
 
-managers_address = ["42 Kingsway, London WC2B 6EY", "5 Queensway London W2 3RX", "188 York Rd, London SW11 3JZ", "372 King St, London W6 0RX", "47 Portman Towers, George St, London W1H 7HW" ]
+managers_address = ["42 Kingsway, London WC2B 6EY", "5 Queensway London W2 3RX", "188 York Rd, London SW11 3JZ", "372 King St, London W6 0RX", "51 Gloucester Pl, London W1U 8JF" ]
 properties_address = ["375 Park Road London NW10 3JR", "25 Grove Rd Bushwood, London E11 3AN", "150 High St, London E15 2NE", "Thomas Frye Court, 30 High St, London E15 2PS", "125 Red Lion Rd, Surbiton KT6 7QR", "64 Lawrie Park Rd, London SE26 6DN", "22 Palmer St, London SW1H 0PH", "99 Park Ln, London W1K 7TH", "159 Brick Ln, London E1 6SB", "10 Ellen St, London E1 1PE", "47 Leman St, London E1 8EN" ]
 
 users = []

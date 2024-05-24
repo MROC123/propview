@@ -21,7 +21,9 @@
 
   <div class="results-answer">
     <% if @results.empty? %>
-      <p><%= "Sorry there are no results, please add the property or owner" %></p>
+    <div>
+      <p>Sorry there are no results, please add the property or owner <%= link_to " here", new_property_path %> </p>
+    </div>
     <% else %>
       <p><%= "Here are your search results..." %></p>
     <% end %>

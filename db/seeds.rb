@@ -38,7 +38,7 @@ managers = []
   managers << manager
 end
 
-property_types = ["Apartment", "House", "Semi-Detached", "Terrace", "Studio"]
+@property_types = ["Apartment", "House", "Semi-Detached", "Terrace", "Studio"]
 
 properties = []
 10.times do
